@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安装指南 - RidgeSun 空气过滤器</title>
-    <meta name="description" content="RidgeSun 空气过滤器安装视频教程和图文指南">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/installation.css">
+    <title>Installation Guide - Ridgesun PureRing</title>
+    <meta name="description" content="Professional installation guide for Ridgesun PureRing 1000 & 1000ie industrial air filtration systems">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-blue': '#1e3a8a',
+                        'safety-red': '#dc2626',
+                        'industrial-gray': '#374151',
+                        'accent-orange': '#f97316',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
-<body>
-    <!-- 导航栏（与首页相同） -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="/assets/logo.svg" alt="RidgeSun Logo" width="120" height="40">
-                <span class="logo-text">RidgeSun</span>
-            </a>
-            <div class="nav-menu">
-                <a href="/" class="nav-link">首页</a>
-                <a href="/installation" class="nav-link active">安装指南</a>
-                <a href="/warranty" class="nav-link">质保注册</a>
-                <a href="/purchase" class="nav-link">购买滤网</a>
-                <a href="/support" class="nav-link">支持</a>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-industrial-blue text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-industrial-blue font-bold text-xl">RS</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-blue-200 text-sm">Installation Guide</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="/go" class="text-white hover:text-blue-200 font-medium">QR Hub</a>
+                    <a href="/installation" class="text-white hover:text-blue-200 font-medium font-bold">Installation</a>
+                    <a href="/warranty" class="text-white hover:text-blue-200 font-medium">Warranty</a>
+                    <a href="/shop" class="text-white hover:text-blue-200 font-medium">Shop</a>
+                </div>
             </div>
-            <button class="mobile-menu-btn" aria-label="菜单">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- 安装指南主内容 -->
     <main class="installation-main">
@@ -329,37 +357,27 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo">RidgeSun</div>
-                    <p class="footer-tagline">专业空气净化解决方案</p>
+    <!-- Footer -->
+    <footer class="bg-industrial-gray text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>产品</h4>
-                        <a href="/products">空气过滤器</a>
-                        <a href="/filters">替换滤网</a>
-                        <a href="/accessories">配件</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>支持</h4>
-                        <a href="/installation">安装指南</a>
-                        <a href="/warranty">质保服务</a>
-                        <a href="/support">联系我们</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>公司</h4>
-                        <a href="/about">关于我们</a>
-                        <a href="/contact">联系方式</a>
-                        <a href="/privacy">隐私政策</a>
-                    </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 RidgeSun. 保留所有权利。</p>
-                <p>www.ridgesun.com | 使用Cloudflare部署</p>
             </div>
         </div>
     </footer>
-
-    <script src="/scripts/main.js"></script>
     <script>
         // Model Selection
         const model1000Btn = document.getElementById('model-1000');
