@@ -3,387 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation Guide - Ridgesun PureRing</title>
+    <title>Installation Guide | Ridgesun PureRing</title>
     <meta name="description" content="Professional installation guide for Ridgesun PureRing 1000 & 1000ie industrial air filtration systems">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'industrial-blue': '#1e3a8a',
-                        'safety-red': '#dc2626',
-                        'industrial-gray': '#374151',
-                        'accent-orange': '#f97316',
+                        'industrial': {
+                            'primary': '#0f172a',
+                            'secondary': '#1e293b',
+                            'accent': '#2563eb',
+                            'danger': '#dc2626',
+                            'warning': '#f59e0b',
+                        }
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
                         'mono': ['Roboto Mono', 'monospace'],
+                    },
+                    fontSize: {
+                        'industrial-lg': '1.125rem',
+                        'industrial-xl': '1.25rem',
+                        'industrial-2xl': '1.5rem',
+                        'industrial-3xl': '1.875rem',
+                        'industrial-4xl': '2.25rem',
                     }
                 }
             }
         }
     </script>
     
-    <!-- Inter Font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMWUzYThhIi8+Cjx0ZXh0IHg9IjE2IiB5PSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UjwvdGV4dD4KPC9zdmc+">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        .safety-alert {
+            background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%);
+            border-left: 6px solid #dc2626;
+            animation: pulse-alert 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-alert {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+        
+        .model-switch {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: #f1f5f9;
+            border-radius: 9999px;
+            padding: 4px;
+        }
+        
+        .model-switch-button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 1;
+            min-width: 140px;
+        }
+        
+        .model-switch-button.active {
+            background: white;
+            color: #0f172a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .model-switch-button:not(.active) {
+            color: #64748b;
+        }
+        
+        .video-container {
+            background: #0f172a;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .play-button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+        
+        .step-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-slate-50 font-display text-slate-900">
     <!-- Header -->
-    <header class="bg-industrial-blue text-white">
+    <header class="bg-industrial-primary text-white">
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <a href="/go" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                            <span class="text-industrial-blue font-bold text-xl">RS</span>
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-industrial-accent rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold">🏭</span>
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
-                            <p class="text-blue-200 text-sm">Installation Guide</p>
+                            <h1 class="text-industrial-3xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-slate-300 text-industrial-lg">Installation Guide</p>
                         </div>
                     </a>
                 </div>
                 
                 <div class="flex items-center space-x-6">
-                    <a href="/go" class="text-white hover:text-blue-200 font-medium">QR Hub</a>
-                    <a href="/installation" class="text-white hover:text-blue-200 font-medium font-bold">Installation</a>
-                    <a href="/warranty" class="text-white hover:text-blue-200 font-medium">Warranty</a>
-                    <a href="/shop" class="text-white hover:text-blue-200 font-medium">Shop</a>
+                    <a href="/go" class="text-white hover:text-slate-300 font-medium text-industrial-lg">QR Hub</a>
+                    <a href="/installation" class="text-white font-bold text-industrial-lg border-b-2 border-white">Installation</a>
+                    <a href="/warranty" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Warranty</a>
+                    <a href="/shop" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Shop</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 安装指南主内容 -->
-    <main class="installation-main">
-        <div class="container">
-            <!-- CRITICAL SAFETY ALERT -->
-            <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0">
-                        <svg class="h-8 w-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Safety Alert -->
+        <div class="safety-alert rounded-2xl p-8 mb-10">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg class="w-10 h-10 text-industrial-danger" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
+                </div>
+                <div class="ml-6">
+                    <h3 class="text-industrial-2xl font-bold text-industrial-danger mb-3">⚠️ CRITICAL SAFETY ALERT</h3>
+                    <p class="text-industrial-danger font-bold text-industrial-xl mb-3">
+                        IMPORTANT: Install the side handles BEFORE lifting the heavy unit out of the box!
+                    </p>
+                    <p class="text-red-700 text-industrial-lg">
+                        The PureRing 1000 weighs 85 lbs (38.5 kg). Failure to install handles first may result in injury or damage to the unit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+            <h2 class="text-industrial-4xl font-bold text-industrial-primary mb-6">PureRing Installation Guide</h2>
+            <p class="text-slate-600 text-industrial-xl mb-8 max-w-3xl">
+                Professional installation guide for Ridgesun PureRing 1000 & 1000ie industrial air filtration systems.
+            </p>
+            
+            <!-- Model Selector -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+                <h3 class="text-industrial-2xl font-bold text-industrial-primary mb-6">Select Your Model</h3>
+                <div class="model-switch mb-6">
+                    <button id="model-1000" class="model-switch-button active" data-model="1000">
+                        PureRing 1000
+                    </button>
+                    <button id="model-1000ie" class="model-switch-button" data-model="1000ie">
+                        PureRing 1000ie (Smart)
+                    </button>
+                </div>
+                <p id="model-description" class="text-slate-600 text-industrial-lg">
+                    Standard industrial model with manual controls and basic filtration monitoring.
+                </p>
+            </div>
+            
+            <!-- Installation Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="flex items-center text-slate-600">
+                    <svg class="w-6 h-6 mr-3 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-industrial-lg">Duration: 15 minutes</span>
+                </div>
+                <div class="flex items-center text-slate-600">
+                    <svg class="w-6 h-6 mr-3 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                    <span class="text-industrial-lg">Tools: Phillips screwdriver, level</span>
+                </div>
+                <div class="flex items-center text-slate-600">
+                    <svg class="w-6 h-6 mr-3 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <span class="text-industrial-lg">Safety: 2-person lift recommended</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="mb-16">
+            <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-8">Installation Video</h3>
+            
+            <div class="video-container mb-8">
+                <div id="video-placeholder" class="video-placeholder">
+                    <div class="play-button" onclick="playVideo()">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"></path>
                         </svg>
                     </div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-bold text-red-800 mb-2">⚠️ CRITICAL SAFETY ALERT</h3>
-                        <p class="text-red-700 font-bold text-lg">IMPORTANT: Install the side handles BEFORE lifting the heavy unit out of the box!</p>
-                        <p class="text-red-600 mt-2">Failure to install handles first may result in injury or damage to the unit. The PureRing 1000 weighs 85 lbs (38.5 kg).</p>
+                    <p class="text-white text-industrial-xl font-semibold mb-2">Click to play installation video</p>
+                    <p class="text-slate-300">PureRing 1000 Installation Guide</p>
+                </div>
+                
+                <!-- Smart Model Video (Hidden by default) -->
+                <div id="smart-video-placeholder" class="video-placeholder hidden">
+                    <div class="play-button bg-green-600" onclick="playSmartVideo()">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-white text-industrial-xl font-semibold mb-2">Click to play smart installation video</p>
+                    <p class="text-slate-300">PureRing 1000ie Smart Features Setup</p>
+                </div>
+            </div>
+            
+            <!-- Video Controls -->
+            <div class="flex flex-wrap gap-4 mb-8">
+                <button id="play-btn" onclick="playVideo()" class="px-6 py-3 bg-industrial-accent text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                    Play Video
+                </button>
+                <button id="pause-btn" onclick="pauseVideo()" class="px-6 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors flex items-center hidden">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                    </svg>
+                    Pause
+                </button>
+                <button onclick="toggleFullscreen()" class="px-6 py-3 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path>
+                    </svg>
+                    Fullscreen
+                </button>
+            </div>
+            
+            <!-- Video Chapters -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="step-card p-6 cursor-pointer" onclick="seekToTime(0)">
+                    <div class="text-slate-500 text-sm mb-2">Chapter 1</div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Unboxing & Safety</h4>
+                    <p class="text-slate-600 text-sm">0:00 - 2:30</p>
+                </div>
+                <div class="step-card p-6 cursor-pointer" onclick="seekToTime(150)">
+                    <div class="text-slate-500 text-sm mb-2">Chapter 2</div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Handle Installation</h4>
+                    <p class="text-slate-600 text-sm">2:30 - 5:45</p>
+                </div>
+                <div class="step-card p-6 cursor-pointer" onclick="seekToTime(345)">
+                    <div class="text-slate-500 text-sm mb-2">Chapter 3</div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Mounting & Leveling</h4>
+                    <p class="text-slate-600 text-sm">5:45 - 10:15</p>
+                </div>
+                <div class="step-card p-6 cursor-pointer" onclick="seekToTime(615)">
+                    <div class="text-slate-500 text-sm mb-2">Chapter 4</div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Power & Testing</h4>
+                    <p class="text-slate-600 text-sm">10:15 - 15:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step-by-Step Guide -->
+        <div class="mb-16">
+            <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-10">Step-by-Step Installation</h3>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="step-card p-8">
+                    <div class="flex items-start">
+                        <div class="step-number mr-6">1</div>
+                        <div class="flex-grow">
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-4">Preparation</h4>
+                            <ul class="space-y-3 text-slate-600 text-industrial-lg">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Confirm installation location (minimum 1.5m from floor)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Check all components are present in packaging</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Prepare Phillips screwdriver and level</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Ensure power outlet is accessible</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card p-8">
+                    <div class="flex items-start">
+                        <div class="step-number mr-6">2</div>
+                        <div class="flex-grow">
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-4">Handle Installation</h4>
+                            <ul class="space-y-3 text-slate-600 text-industrial-lg">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Locate side handles in accessory kit</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Align handles with pre-drilled holes on unit sides</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Secure with provided screws (hand-tighten first)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Use screwdriver to fully tighten all screws</span>
+                                </li>
+                            </ul>
+                            <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                                <p class="text-amber-800 font-semibold">⚠️ CRITICAL: Handles must be installed BEFORE lifting unit from box</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card p-8">
+                    <div class="flex items-start">
+                        <div class="step-number mr-6">3</div>
+                        <div class="flex-grow">
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-4">Mounting & Leveling</h4>
+                            <ul class="space-y-3 text-slate-600 text-industrial-lg">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Using handles, lift unit from packaging (2-person recommended)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Position unit against wall at desired location</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Use level to ensure unit is perfectly vertical</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Mark wall mounting holes with pencil</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Drill holes and install wall anchors</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Secure unit to wall with provided mounting hardware</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card p-8">
+                    <div class="flex items-start">
+                        <div class="step-number mr-6">4</div>
+                        <div class="flex-grow">
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-4">Power & Testing</h4>
+                            <ul class="space-y-3 text-slate-600 text-industrial-lg">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Connect power cable to 120V outlet</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Turn on main power switch (located on side)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Check LED status indicators (green = normal operation)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Test all fan speed settings (Low/Medium/High)</span>
+                                </li>
+                                <li id="smart-feature-step" class="flex items-start hidden">
+                                    <span class="text-green-500 mr-3">✓</span>
+                                    <span>Connect to WiFi and configure via Ridgesun App (1000ie only)</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <header class="installation-header">
-                <h1 class="text-3xl font-bold text-gray-900 mb-4">PureRing Installation Guide</h1>
-                <p class="subtitle text-gray-600 text-lg mb-6">Professional installation guide for Ridgesun PureRing 1000 & 1000ie industrial air filtration systems</p>
-                
-                <!-- Model Selector -->
-                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-                    <h3 class="text-lg font-bold text-gray-900 mb-4">Select Your Model</h3>
-                    <div class="flex space-x-4">
-                        <button id="model-1000" class="model-selector active px-6 py-3 rounded-lg font-semibold border-2 border-industrial-blue bg-industrial-blue text-white">
-                            PureRing 1000
-                        </button>
-                        <button id="model-1000ie" class="model-selector px-6 py-3 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:border-industrial-blue hover:text-industrial-blue">
-                            PureRing 1000ie (Smart)
-                        </button>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p id="model-description">Standard industrial model with manual controls and basic filtration monitoring.</p>
-                    </div>
+        <!-- Smart Features Section (1000ie only) -->
+        <div id="smart-features" class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 mb-16 hidden">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
                 </div>
-                
-                <div class="video-meta flex flex-wrap gap-4 text-gray-600">
-                    <span class="flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        Duration: 15 minutes
-                    </span>
-                    <span class="flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                        </svg>
-                        Tools: Phillips screwdriver, level
-                    </span>
-                    <span class="flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                        Safety: 2-person lift recommended
-                    </span>
-                </div>
-            </header>
-
-            <!-- Video Player -->
-            <section class="video-player-section mb-12">
-                <div class="bg-gray-900 rounded-xl overflow-hidden">
-                    <!-- Responsive Video Container -->
-                    <div class="relative pt-[56.25%]"> <!-- 16:9 Aspect Ratio -->
-                        <div id="video-placeholder" class="absolute inset-0 bg-gray-800 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="w-20 h-20 mx-auto mb-4 bg-industrial-blue rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors" onclick="playVideo()">
-                                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"></path>
-                                    </svg>
-                                </div>
-                                <p class="text-white text-lg font-semibold">Click to play installation video</p>
-                                <p class="text-gray-400 mt-2">PureRing 1000 Installation Guide</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Smart Model Video (Hidden by default) -->
-                        <div id="smart-video-placeholder" class="absolute inset-0 bg-gray-800 flex items-center justify-center hidden">
-                            <div class="text-center">
-                                <div class="w-20 h-20 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-700 transition-colors" onclick="playSmartVideo()">
-                                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"></path>
-                                    </svg>
-                                </div>
-                                <p class="text-white text-lg font-semibold">Click to play smart installation video</p>
-                                <p class="text-gray-400 mt-2">PureRing 1000ie Smart Features Setup</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Video Controls -->
-                    <div class="bg-gray-800 p-4 flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <button id="play-btn" class="flex items-center space-x-2 px-4 py-2 bg-industrial-blue text-white rounded-lg hover:bg-blue-700 transition-colors" onclick="playVideo()">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"></path>
-                                </svg>
-                                <span>Play</span>
-                            </button>
-                            <button id="pause-btn" class="flex items-center space-x-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors hidden" onclick="pauseVideo()">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
-                                </svg>
-                                <span>Pause</span>
-                            </button>
-                            <button class="flex items-center space-x-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors" onclick="toggleFullscreen()">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path>
-                                </svg>
-                                <span>Fullscreen</span>
-                            </button>
-                        </div>
-                        
-                        <div class="flex items-center space-x-4">
-                            <div class="flex items-center space-x-2">
-                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                                </svg>
-                                <input type="range" min="0" max="100" value="80" class="w-24 accent-industrial-blue" id="volume-slider" onchange="changeVolume(this.value)">
-                            </div>
-                            
-                            <div class="text-gray-400 text-sm">
-                                <span id="current-time">0:00</span> / <span id="total-time">15:00</span>
-                            </div>
-                        </div>
-                    </div>
+                <h3 class="text-industrial-3xl font-bold text-green-900">PureRing 1000ie Smart Features</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6">
+                    <h4 class="text-industrial-xl font-bold text-green-800 mb-3">WiFi Connectivity</h4>
+                    <ul class="space-y-2 text-green-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Connect to 2.4GHz WiFi network</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Download Ridgesun App from App Store/Google Play</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Follow in-app pairing instructions</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Video Chapters -->
-                <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(0)">
-                        <div class="text-sm text-gray-500 mb-1">Chapter 1</div>
-                        <h4 class="font-semibold text-gray-900">Unboxing & Safety</h4>
-                        <p class="text-sm text-gray-600 mt-1">0:00 - 2:30</p>
-                    </div>
-                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(150)">
-                        <div class="text-sm text-gray-500 mb-1">Chapter 2</div>
-                        <h4 class="font-semibold text-gray-900">Handle Installation</h4>
-                        <p class="text-sm text-gray-600 mt-1">2:30 - 5:45</p>
-                    </div>
-                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(345)">
-                        <div class="text-sm text-gray-500 mb-1">Chapter 3</div>
-                        <h4 class="font-semibold text-gray-900">Mounting & Leveling</h4>
-                        <p class="text-sm text-gray-600 mt-1">5:45 - 10:15</p>
-                    </div>
-                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(615)">
-                        <div class="text-sm text-gray-500 mb-1">Chapter 4</div>
-                        <h4 class="font-semibold text-gray-900">Power & Testing</h4>
-                        <p class="text-sm text-gray-600 mt-1">10:15 - 15:00</p>
-                    </div>
+                <div class="bg-white rounded-xl p-6">
+                    <h4 class="text-industrial-xl font-bold text-green-800 mb-3">Air Quality Monitoring</h4>
+                    <ul class="space-y-2 text-green-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Real-time PM2.5/PM10 readings</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Filter life tracking and alerts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span>Remote control via mobile app</span>
+                        </li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <!-- 分步指南 -->
-            <section class="step-by-step">
-                <h2>图文安装步骤</h2>
-                <div class="steps-container">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>准备工作</h3>
-                            <ul>
-                                <li>确认安装位置（建议离地面1.5米以上）</li>
-                                <li>检查包装内所有配件是否齐全</li>
-                                <li>准备螺丝刀等工具</li>
-                                <li>确保电源插座可用</li>
-                            </ul>
-                            <div class="step-image">
-                                <div class="image-placeholder">📦 包装内容示意图</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>安装支架</h3>
-                            <ul>
-                                <li>使用水平仪确定支架位置</li>
-                                <li>标记螺丝孔位置</li>
-                                <li>钻孔并安装膨胀螺丝</li>
-                                <li>固定支架到墙面</li>
-                            </ul>
-                            <div class="step-image">
-                                <div class="image-placeholder">🔩 支架安装示意图</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>安装过滤器</h3>
-                            <ul>
-                                <li>将过滤器对准支架卡槽</li>
-                                <li>轻轻推入直到听到"咔哒"声</li>
-                                <li>检查是否安装牢固</li>
-                                <li>移除保护膜</li>
-                            </ul>
-                            <div class="step-image">
-                                <div class="image-placeholder">🔌 过滤器安装示意图</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Power & Testing</h3>
-                            <ul>
-                                <li>Connect power cable to 120V outlet</li>
-                                <li>Turn on main power switch</li>
-                                <li>Check LED status indicators</li>
-                                <li>Test all fan speed settings</li>
-                                <li id="smart-feature" class="hidden">Connect to WiFi and configure smart features via Ridgesun App</li>
-                            </ul>
-                            <div class="step-image">
-                                <div class="image-placeholder">💡 Power Testing Diagram</div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- FAQ Section -->
+        <div class="mb-16">
+            <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-10">Frequently Asked Questions</h3>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl border border-slate-200 p-6">
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">What if the unit doesn't power on?</h4>
+                    <p class="text-slate-600 text-industrial-lg">Check: 1) Power outlet is working 2) Power cable is securely connected 3) Main switch is turned on. If issues persist, contact support.</p>
                 </div>
-            </section>
-
-            <!-- 常见问题 -->
-            <section class="faq-section">
-                <h2>常见问题解答</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">安装后指示灯不亮怎么办？</button>
-                        <div class="faq-answer">
-                            <p>请检查：1) 电源是否接通 2) 电源线是否连接牢固 3) 插座是否有电。如果以上都正常，请联系技术支持。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">过滤器有异响怎么办？</button>
-                        <div class="faq-answer">
-                            <p>轻微的风声是正常的。如果有异常噪音：1) 检查是否有异物进入 2) 确保安装牢固 3) 联系客服获取帮助。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">多久需要更换滤网？</button>
-                        <div class="faq-answer">
-                            <p>建议每6-12个月更换一次滤网，具体取决于使用环境。当指示灯变红或风量明显减小时应及时更换。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">可以自己清洁滤网吗？</button>
-                        <div class="faq-answer">
-                            <p>不建议清洁滤网，因为可能会损坏过滤材料。请直接更换原装滤网以保证过滤效果。</p>
-                        </div>
-                    </div>
+                
+                <div class="bg-white rounded-xl border border-slate-200 p-6">
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">Can I install it myself or do I need professional help?</h4>
+                    <p class="text-slate-600 text-industrial-lg">The PureRing is designed for DIY installation. However, due to its weight (85 lbs), we recommend having a second person assist with lifting and mounting.</p>
                 </div>
-            </section>
-
-            <!-- 下载区域 -->
-            <section class="downloads-section">
-                <h2>相关下载</h2>
-                <div class="downloads-grid">
-                    <a href="#" class="download-card" onclick="alert('Download will be available after deployment'); return false;">
-                        <div class="download-icon">📄</div>
-                        <h3>Installation Manual PDF</h3>
-                        <p>Detailed installation guide</p>
-                        <span class="file-size">2.5 MB</span>
-                    </a>
-                    
-                    <a href="#" class="download-card" onclick="alert('Download will be available after deployment'); return false;">
-                        <div class="download-icon">⚠️</div>
-                        <h3>Safety Guide</h3>
-                        <p>Safety instructions</p>
-                        <span class="file-size">1.2 MB</span>
-                    </a>
-                    
-                    <a href="#" class="download-card" onclick="alert('Download will be available after deployment'); return false;">
-                        <div class="download-icon">📝</div>
-                        <h3>Warranty Card</h3>
-                        <p>Product warranty information</p>
-                        <span class="file-size">0.8 MB</span>
-                    </a>
+                
+                <div class="bg-white rounded-xl border border-slate-200 p-6">
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">How do I know when to replace filters?</h4>
+                    <p class="text-slate-600 text-industrial-lg">Standard replacement interval is 6 months for HEPA filter, 3 months for pre-filter. The 1000ie model provides filter life monitoring via the app.</p>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 
-    <!-- 页脚（与首页相同） -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">RidgeSun</div>
     <!-- Footer -->
-    <footer class="bg-industrial-gray text-white py-8">
+    <footer class="bg-industrial-primary text-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
-                            <span class="text-white font-bold">R</span>
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-industrial-accent rounded-lg flex items-center justify-center">
+                            <span class="text-xl font-bold">R</span>
                         </div>
-                        <span class="text-xl font-bold">Ridgesun</span>
+                        <span class="text-industrial-2xl font-bold">Ridgesun</span>
                     </div>
-                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
+                    <p class="text-slate-400 text-industrial-lg">Industrial Air Filtration Systems</p>
                 </div>
                 
                 <div class="text-center md:text-right">
-                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
-                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified</p>
+                    <p class="text-slate-400 text-industrial-lg mb-2">© 2024 Ridgesun Industries</p>
+                    <p class="text-slate-500 text-sm">Made in USA | ISO 9001 Certified</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
     <script>
-        // Model Selection
+        // Model Switching Logic
         const model1000Btn = document.getElementById('model-1000');
         const model1000ieBtn = document.getElementById('model-1000ie');
         const modelDescription = document.getElementById('model-description');
-        const smartFeature = document.getElementById('smart-feature');
+        const smartFeaturesSection = document.getElementById('smart-features');
+        const smartFeatureStep = document.getElementById('smart-feature-step');
         const videoPlaceholder = document.getElementById('video-placeholder');
         const smartVideoPlaceholder = document.getElementById('smart-video-placeholder');
         
@@ -392,56 +565,65 @@
             '1000ie': 'Smart model with WiFi connectivity, mobile app control, and advanced air quality monitoring.'
         };
         
-        model1000Btn.addEventListener('click', function() {
-            setActiveModel('1000');
-        });
-        
-        model1000ieBtn.addEventListener('click', function() {
-            setActiveModel('1000ie');
-        });
-        
         function setActiveModel(model) {
-            // Update buttons
-            document.querySelectorAll('.model-selector').forEach(btn => {
-                btn.classList.remove('active', 'bg-industrial-blue', 'text-white', 'border-industrial-blue');
-                btn.classList.add('border-gray-300', 'text-gray-700');
+            // Update button states
+            [model1000Btn, model1000ieBtn].forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('text-slate-500');
             });
             
             const activeBtn = document.getElementById(`model-${model}`);
-            activeBtn.classList.add('active', 'bg-industrial-blue', 'text-white', 'border-industrial-blue');
-            activeBtn.classList.remove('border-gray-300', 'text-gray-700');
+            activeBtn.classList.add('active');
+            activeBtn.classList.remove('text-slate-500');
             
             // Update description
             modelDescription.textContent = modelDescriptions[model];
             
             // Show/hide smart features
             if (model === '1000ie') {
-                smartFeature.classList.remove('hidden');
+                smartFeaturesSection.classList.remove('hidden');
+                smartFeatureStep.classList.remove('hidden');
                 videoPlaceholder.classList.add('hidden');
                 smartVideoPlaceholder.classList.remove('hidden');
             } else {
-                smartFeature.classList.add('hidden');
+                smartFeaturesSection.classList.add('hidden');
+                smartFeatureStep.classList.add('hidden');
                 videoPlaceholder.classList.remove('hidden');
                 smartVideoPlaceholder.classList.add('hidden');
             }
+            
+            // Update URL for sharing
+            const url = new URL(window.location);
+            url.searchParams.set('model', model);
+            window.history.replaceState({}, '', url);
         }
         
-        // Video Controls
+        // Initialize model from URL or default to 1000
+        function initializeModel() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const model = urlParams.get('model');
+            
+            if (model === '1000' || model === '1000ie') {
+                setActiveModel(model);
+            } else {
+                setActiveModel('1000');
+            }
+        }
+        
+        // Video controls
         let isPlaying = false;
         
         function playVideo() {
             isPlaying = true;
             document.getElementById('play-btn').classList.add('hidden');
             document.getElementById('pause-btn').classList.remove('hidden');
-            // In production, this would start actual video playback
-            console.log('Playing standard installation video');
+            console.log('Playing installation video');
         }
         
         function playSmartVideo() {
             isPlaying = true;
             document.getElementById('play-btn').classList.add('hidden');
             document.getElementById('pause-btn').classList.remove('hidden');
-            // In production, this would start smart model video
             console.log('Playing smart installation video');
         }
         
@@ -452,46 +634,32 @@
             console.log('Video paused');
         }
         
-        function toggleFullscreen() {
-            const container = document.querySelector('.video-player-section .bg-gray-900');
-            if (!document.fullscreenElement) {
-                container.requestFullscreen().catch(err => {
-                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-        
-        function changeVolume(value) {
-            console.log(`Volume changed to ${value}%`);
-        }
-        
         function seekToTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const remainingSeconds = seconds % 60;
-            document.getElementById('current-time').textContent = 
-                `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-            console.log(`Seeking to ${minutes}:${remainingSeconds.toString().padStart(2, '0')}`);
+            console.log(`Seeking to ${seconds} seconds`);
+            // In a real implementation, this would control the video player
+            alert(`Video would seek to ${Math.floor(seconds/60)}:${String(seconds%60).padStart(2, '0')}`);
+        }
+        
+        function toggleFullscreen() {
+            console.log('Toggle fullscreen');
+            // In a real implementation, this would toggle fullscreen mode
+            alert('Fullscreen mode would activate');
         }
         
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial model
-            setActiveModel('1000');
+            // Set up model switching
+            model1000Btn.addEventListener('click', () => setActiveModel('1000'));
+            model1000ieBtn.addEventListener('click', () => setActiveModel('1000ie'));
             
-            // Update time display every second (simulated)
-            setInterval(() => {
-                if (isPlaying) {
-                    const current = document.getElementById('current-time');
-                    const [min, sec] = current.textContent.split(':').map(Number);
-                    let totalSeconds = min * 60 + sec + 1;
-                    if (totalSeconds >= 15 * 60) totalSeconds = 0;
-                    const newMin = Math.floor(totalSeconds / 60);
-                    const newSec = totalSeconds % 60;
-                    current.textContent = `${newMin}:${newSec.toString().padStart(2, '0')}`;
-                }
-            }, 1000);
+            // Initialize model from URL or default
+            initializeModel();
+            
+            // Set up video controls
+            document.getElementById('play-btn').addEventListener('click', playVideo);
+            document.getElementById('pause-btn').addEventListener('click', pauseVideo);
+            
+            console.log('Installation guide page loaded');
         });
     </script>
 </body>

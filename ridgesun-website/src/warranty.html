@@ -3,142 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty Registration - Ridgesun PureRing</title>
-    <meta name="description" content="Register your Ridgesun PureRing warranty for 3-year coverage">
+    <title>5-Year Warranty Registration | Ridgesun PureRing</title>
+    <meta name="description" content="Register your Ridgesun PureRing for 5-year extended warranty coverage">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'industrial-blue': '#1e3a8a',
-                        'safety-red': '#dc2626',
-                        'industrial-gray': '#374151',
-                        'accent-orange': '#f97316',
-                        'success-green': '#10b981',
+                        'industrial': {
+                            'primary': '#0f172a',
+                            'secondary': '#1e293b',
+                            'accent': '#2563eb',
+                            'danger': '#dc2626',
+                            'warning': '#f59e0b',
+                            'success': '#059669',
+                        }
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
                         'mono': ['Roboto Mono', 'monospace'],
+                    },
+                    fontSize: {
+                        'industrial-lg': '1.125rem',
+                        'industrial-xl': '1.25rem',
+                        'industrial-2xl': '1.5rem',
+                        'industrial-3xl': '1.875rem',
+                        'industrial-4xl': '2.25rem',
                     }
                 }
             }
         }
     </script>
     
-    <!-- Inter Font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMWUzYThhIi8+Cjx0ZXh0IHg9IjE2IiB5PSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UjwvdGV4dD4KPC9zdmc+">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
     
     <style>
-        .form-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e5e7eb;
-        }
-        
-        .input-field {
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
+        .warranty-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
             transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
         }
         
-        .input-field:focus {
-            border-color: #1e3a8a;
-            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
-            outline: none;
+        .warranty-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
         }
         
-        .input-field.error {
+        .form-input {
+            border: 2px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .form-input.error {
             border-color: #dc2626;
-            background-color: #fef2f2;
+        }
+        
+        .form-input.success {
+            border-color: #059669;
+        }
+        
+        .serial-badge {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 0.05em;
         }
         
         .warranty-badge {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 4px 12px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        .serial-highlight {
-            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 2px solid #0ea5e9;
-            border-radius: 8px;
-            font-family: 'Roboto Mono', monospace;
-            letter-spacing: 1px;
-        }
-        
-        .date-input::-webkit-calendar-picker-indicator {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>');
-            cursor: pointer;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
         }
         
         .progress-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
-            border-radius: 2px;
-            transition: width 0.3s ease;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
         }
         
-        .success-checkmark {
-            width: 80px;
-            height: 80px;
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            transition: width 0.5s ease;
+        }
+        
+        .checkmark {
+            width: 24px;
+            height: 24px;
+            background: #059669;
             border-radius: 50%;
-            background: #10b981;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: scaleIn 0.5s ease-out;
         }
         
-        @keyframes scaleIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
+        .checkmark svg {
+            width: 16px;
+            height: 16px;
+            color: white;
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-slate-50 font-display text-slate-900">
     <!-- Header -->
-    <header class="bg-industrial-blue text-white">
+    <header class="bg-industrial-primary text-white">
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <a href="/go" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                            <span class="text-industrial-blue font-bold text-xl">RS</span>
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-industrial-accent rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold">🏭</span>
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
-                            <p class="text-blue-200 text-sm">Warranty Registration</p>
+                            <h1 class="text-industrial-3xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-slate-300 text-industrial-lg">Warranty Registration</p>
                         </div>
                     </a>
                 </div>
                 
-                <div class="flex items-center space-x-4">
-                    <div class="warranty-badge">3-Year Warranty</div>
-                    <div class="text-sm text-blue-200">
-                        Made in USA
-                    </div>
+                <div class="flex items-center space-x-6">
+                    <a href="/go" class="text-white hover:text-slate-300 font-medium text-industrial-lg">QR Hub</a>
+                    <a href="/installation" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Installation</a>
+                    <a href="/warranty" class="text-white font-bold text-industrial-lg border-b-2 border-white">Warranty</a>
+                    <a href="/shop" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Shop</a>
                 </div>
             </div>
         </div>
@@ -146,266 +145,352 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <!-- Progress Indicator -->
-            <div class="mb-12">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 bg-industrial-blue text-white rounded-full flex items-center justify-center font-bold">1</div>
-                        <span class="text-sm font-medium text-industrial-blue">Product Info</span>
-                    </div>
-                    <div class="flex-1 h-1 mx-4 bg-gray-200">
-                        <div class="progress-bar w-1/3"></div>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold">2</div>
-                        <span class="text-sm font-medium text-gray-500">Customer Details</span>
-                    </div>
-                    <div class="flex-1 h-1 mx-4 bg-gray-200">
-                        <div class="progress-bar w-0"></div>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold">3</div>
-                        <span class="text-sm font-medium text-gray-500">Confirmation</span>
+        <!-- Warranty Header -->
+        <div class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div>
+                    <h2 class="text-industrial-4xl font-bold text-industrial-primary mb-4">5-Year Extended Warranty</h2>
+                    <p class="text-slate-600 text-industrial-xl max-w-3xl">
+                        Register your Ridgesun PureRing to activate 5-year comprehensive warranty coverage.
+                    </p>
+                </div>
+                
+                <div class="warranty-badge text-white px-6 py-3 rounded-xl mt-4 md:mt-0">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span class="text-industrial-xl font-bold">5-Year Coverage</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Registration Form -->
-            <div class="form-card p-8 mb-8 fade-in-up">
-                <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-industrial-gray mb-3">Warranty Registration</h2>
-                    <p class="text-gray-600">Register your Ridgesun PureRing to activate your 3-year limited warranty. All fields are required.</p>
+            
+            <!-- Serial Number Display -->
+            <div id="serial-display-section" class="bg-white rounded-2xl border border-slate-200 p-6 mb-8 hidden">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-industrial-xl font-bold text-industrial-primary mb-2">Serial Number Detected</h3>
+                        <p class="text-slate-600">Your product serial number has been automatically captured from QR code.</p>
+                    </div>
+                    <div class="serial-badge px-6 py-3 rounded-lg">
+                        <span class="text-white font-mono text-industrial-xl" id="serial-display">---</span>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mb-10">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-slate-700 font-semibold">Registration Progress</span>
+                    <span class="text-industrial-accent font-bold" id="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
 
-                <form id="warranty-form" class="space-y-8">
-                    <!-- Product Information Section -->
-                    <div class="border-b border-gray-200 pb-8">
-                        <h3 class="text-xl font-bold text-industrial-gray mb-6">Product Information</h3>
-                        
-                        <!-- Serial Number (Auto-filled) -->
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-medium mb-2">
-                                Serial Number
-                                <span class="text-red-500">*</span>
-                            </label>
-                            <div class="serial-highlight p-4 mb-2">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <div class="text-sm text-gray-500 mb-1">Detected from QR Code</div>
-                                        <div id="serial-display" class="text-xl font-bold text-industrial-blue font-mono">Loading serial number...</div>
-                                    </div>
-                                    <button type="button" onclick="editSerialNumber()" class="text-industrial-blue hover:text-blue-700 font-medium text-sm">
-                                        Edit
-                                    </button>
+        <!-- Registration Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Form Column -->
+            <div class="lg:col-span-2">
+                <div class="warranty-card rounded-2xl p-8">
+                    <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-8">Registration Form</h3>
+                    
+                    <form id="warranty-form" class="space-y-8">
+                        <!-- Personal Information -->
+                        <div>
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">Personal Information</h4>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Full Name -->
+                                <div>
+                                    <label for="full-name" class="block text-slate-700 font-semibold mb-2">
+                                        Full Name <span class="text-industrial-danger">*</span>
+                                    </label>
+                                    <input type="text" id="full-name" name="full-name" 
+                                           class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                           placeholder="John Smith"
+                                           required>
+                                    <p class="text-slate-500 text-sm mt-2">As it appears on purchase receipt</p>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-slate-700 font-semibold mb-2">
+                                        Email Address <span class="text-industrial-danger">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" 
+                                           class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                           placeholder="john.smith@example.com"
+                                           required>
+                                    <p class="text-slate-500 text-sm mt-2">Warranty confirmation will be sent here</p>
                                 </div>
                             </div>
-                            <div id="serial-input-container" class="hidden mt-4">
-                                <input type="text" 
-                                       id="serial-input" 
-                                       class="input-field w-full px-4 py-3"
-                                       placeholder="Enter 12-digit serial number (e.g., PR1000-2024-001)"
-                                       pattern="[A-Za-z0-9-]{10,20}"
-                                       maxlength="20">
-                                <p class="text-sm text-gray-500 mt-2">Find the serial number on the product label or packaging.</p>
-                            </div>
-                            <input type="hidden" id="serial-hidden" name="serial_number" required>
                         </div>
                         
-                        <!-- Purchase Date -->
-                        <div class="mb-6">
-                            <label for="purchase-date" class="block text-gray-700 font-medium mb-2">
-                                Purchase Date
-                                <span class="text-red-500">*</span>
-                            </label>
-                            <input type="date" 
-                                   id="purchase-date" 
-                                   name="purchase_date"
-                                   class="input-field w-full px-4 py-3 date-input"
-                                   required>
-                            <p class="text-sm text-gray-500 mt-2">Enter date in MM/DD/YYYY format. Warranty starts from purchase date.</p>
-                        </div>
-                        
-                        <!-- Amazon Order ID -->
+                        <!-- Contact Information -->
                         <div>
-                            <label for="order-id" class="block text-gray-700 font-medium mb-2">
-                                Amazon Order ID
-                                <span class="text-red-500">*</span>
-                            </label>
-                            <input type="text" 
-                                   id="order-id" 
-                                   name="order_id"
-                                   class="input-field w-full px-4 py-3"
-                                   placeholder="e.g., 123-4567890-1234567"
-                                   pattern="[0-9-]{10,20}"
-                                   maxlength="20"
-                                   required>
-                            <p class="text-sm text-gray-500 mt-2">Find this in your Amazon order confirmation email.</p>
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">Contact Information</h4>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Phone Number -->
+                                <div>
+                                    <label for="phone" class="block text-slate-700 font-semibold mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" 
+                                           class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                           placeholder="(123) 456-7890">
+                                </div>
+                                
+                                <!-- Country -->
+                                <div>
+                                    <label for="country" class="block text-slate-700 font-semibold mb-2">
+                                        Country <span class="text-industrial-danger">*</span>
+                                    </label>
+                                    <select id="country" name="country" 
+                                            class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                            required>
+                                        <option value="">Select Country</option>
+                                        <option value="US" selected>United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="MX">Mexico</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="JP">Japan</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Customer Information Section -->
-                    <div class="border-b border-gray-200 pb-8">
-                        <h3 class="text-xl font-bold text-industrial-gray mb-6">Customer Information</h3>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- First Name -->
-                            <div>
-                                <label for="first-name" class="block text-gray-700 font-medium mb-2">
-                                    First Name
-                                    <span class="text-red-500">*</span>
-                                </label>
-                                <input type="text" 
-                                       id="first-name" 
-                                       name="first_name"
-                                       class="input-field w-full px-4 py-3"
-                                       placeholder="John"
-                                       required>
+                        <!-- Product Information -->
+                        <div>
+                            <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">Product Information</h4>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Order Number -->
+                                <div>
+                                    <label for="order-number" class="block text-slate-700 font-semibold mb-2">
+                                        Order/Invoice Number
+                                    </label>
+                                    <input type="text" id="order-number" name="order-number" 
+                                           class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                           placeholder="ORD-123456789">
+                                    <p class="text-slate-500 text-sm mt-2">From your purchase receipt</p>
+                                </div>
+                                
+                                <!-- Purchase Date -->
+                                <div>
+                                    <label for="purchase-date" class="block text-slate-700 font-semibold mb-2">
+                                        Purchase Date <span class="text-industrial-danger">*</span>
+                                    </label>
+                                    <input type="text" id="purchase-date" name="purchase-date" 
+                                           class="form-input w-full px-4 py-3 rounded-lg text-industrial-lg"
+                                           placeholder="MM/DD/YYYY"
+                                           required>
+                                    <p class="text-slate-500 text-sm mt-2">Format: MM/DD/YYYY</p>
+                                </div>
                             </div>
                             
-                            <!-- Last Name -->
-                            <div>
-                                <label for="last-name" class="block text-gray-700 font-medium mb-2">
-                                    Last Name
-                                    <span class="text-red-500">*</span>
+                            <!-- Model Selection -->
+                            <div class="mt-6">
+                                <label class="block text-slate-700 font-semibold mb-3">
+                                    Product Model <span class="text-industrial-danger">*</span>
                                 </label>
-                                <input type="text" 
-                                       id="last-name" 
-                                       name="last_name"
-                                       class="input-field w-full px-4 py-3"
-                                       placeholder="Doe"
-                                       required>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <label class="flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-industrial-accent">
+                                        <input type="radio" name="model" value="1000" class="mr-3" checked>
+                                        <div>
+                                            <div class="font-semibold text-slate-900">PureRing 1000</div>
+                                            <div class="text-slate-600 text-sm">Standard industrial model</div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-industrial-accent">
+                                        <input type="radio" name="model" value="1000ie" class="mr-3">
+                                        <div>
+                                            <div class="font-semibold text-slate-900">PureRing 1000ie</div>
+                                            <div class="text-slate-600 text-sm">Smart model with WiFi</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Serial Number -->
+                            <div class="mt-6">
+                                <label for="serial-number" class="block text-slate-700 font-semibold mb-2">
+                                    Serial Number <span class="text-industrial-danger">*</span>
+                                </label>
+                                <div class="flex">
+                                    <input type="text" id="serial-number" name="serial-number" 
+                                           class="form-input w-full px-4 py-3 rounded-l-lg text-industrial-lg font-mono"
+                                           placeholder="PR-123456789"
+                                           required
+                                           readonly>
+                                    <button type="button" onclick="clearSerialNumber()" 
+                                            class="bg-slate-200 text-slate-700 px-4 py-3 rounded-r-lg hover:bg-slate-300 transition-colors">
+                                        Clear
+                                    </button>
+                                </div>
+                                <p class="text-slate-500 text-sm mt-2">Auto-filled from QR code. Located on product label.</p>
                             </div>
                         </div>
                         
-                        <!-- Email -->
-                        <div class="mt-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">
-                                Email Address
-                                <span class="text-red-500">*</span>
-                            </label>
-                            <input type="email" 
-                                   id="email" 
-                                   name="email"
-                                   class="input-field w-full px-4 py-3"
-                                   placeholder="john.doe@example.com"
-                                   required>
-                            <p class="text-sm text-gray-500 mt-2">Warranty confirmation will be sent to this email.</p>
+                        <!-- Terms & Conditions -->
+                        <div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terms" name="terms" 
+                                       class="mt-1 mr-3 w-5 h-5 rounded border-slate-300 text-industrial-accent focus:ring-industrial-accent"
+                                       required>
+                                <label for="terms" class="text-slate-700">
+                                    I agree to the Terms & Conditions and Privacy Policy. I confirm that the information provided is accurate and I am the original purchaser of this product.
+                                </label>
+                            </div>
                         </div>
                         
-                        <!-- Phone (Optional) -->
-                        <div class="mt-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">
-                                Phone Number <span class="text-gray-500">(Optional)</span>
-                            </label>
-                            <input type="tel" 
-                                   id="phone" 
-                                   name="phone"
-                                   class="input-field w-full px-4 py-3"
-                                   placeholder="(555) 123-4567">
+                        <!-- Submit Button -->
+                        <div class="pt-6">
+                            <button type="submit" 
+                                    class="w-full bg-industrial-accent text-white font-bold py-4 px-6 rounded-xl text-industrial-xl hover:bg-blue-700 transition-colors flex items-center justify-center">
+                                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                Activate 5-Year Warranty
+                            </button>
                         </div>
-                    </div>
-
-                    <!-- Terms & Conditions -->
-                    <div class="mb-8">
-                        <div class="flex items-start">
-                            <input type="checkbox" 
-                                   id="terms" 
-                                   name="terms"
-                                   class="mt-1 mr-3 w-5 h-5 text-industrial-blue rounded focus:ring-industrial-blue"
-                                   required>
-                            <label for="terms" class="text-gray-700">
-                                I agree to the Terms & Conditions and Privacy Policy. I confirm that the information provided is accurate and I am the original purchaser of this product.
-                                <span class="text-red-500">*</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-gray-200">
-                        <a href="/go" class="text-industrial-blue hover:text-blue-700 font-medium mb-4 sm:mb-0">
-                            ← Back to Support Hub
-                        </a>
-                        <button type="submit" 
-                                class="px-8 py-3 bg-industrial-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-industrial-blue focus:ring-offset-2">
-                            Register Warranty
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-
-            <!-- Warranty Benefits -->
-            <div class="form-card p-8">
-                <h3 class="text-xl font-bold text-industrial-gray mb-6">Warranty Benefits</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center p-6 bg-blue-50 rounded-lg">
-                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
-                            <span class="text-2xl">🛡️</span>
+            
+            <!-- Benefits Column -->
+            <div class="space-y-8">
+                <!-- Warranty Benefits -->
+                <div class="warranty-card rounded-2xl p-8">
+                    <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">Warranty Benefits</h4>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="checkmark mr-4 flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-1">5-Year Coverage</h5>
+                                <p class="text-slate-600 text-sm">Comprehensive protection for parts and labor</p>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-gray-900 mb-2">3-Year Coverage</h4>
-                        <p class="text-gray-600 text-sm">Comprehensive protection for parts and labor</p>
+                        
+                        <div class="flex items-start">
+                            <div class="checkmark mr-4 flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-1">Priority Support</h5>
+                                <p class="text-slate-600 text-sm">Dedicated technical support line</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="checkmark mr-4 flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-1">Filter Discounts</h5>
+                                <p class="text-slate-600 text-sm">15% off genuine replacement filters</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="checkmark mr-4 flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-1">Transferable</h5>
+                                <p class="text-slate-600 text-sm">Warranty transfers with product ownership</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center p-6 bg-blue-50 rounded-lg">
-                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
-                            <span class="text-2xl">🚚</span>
-                        </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Fast Service</h4>
-                        <p class="text-gray-600 text-sm">Priority support and expedited parts shipping</p>
+                </div>
+                
+                <!-- Registration Tips -->
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-8">
+                    <h4 class="text-industrial-2xl font-bold text-blue-900 mb-4">Registration Tips</h4>
+                    <ul class="space-y-3 text-blue-800">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span>Register within 30 days of purchase</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span>Keep your purchase receipt for verification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span>Warranty confirmation email sent within 24 hours</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span>Contact support if you don't receive confirmation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Modal -->
+        <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
                     </div>
-                    <div class="text-center p-6 bg-blue-50 rounded-lg">
-                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
-                            <span class="text-2xl">📧</span>
-                        </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Email Updates</h4>
-                        <p class="text-gray-600 text-sm">Maintenance reminders and product updates</p>
+                    
+                    <h3 class="text-industrial-2xl font-bold text-industrial-primary mb-4">Registration Successful!</h3>
+                    <p class="text-slate-600 mb-6">Your Ridgesun PureRing has been registered for 5-year warranty coverage. A confirmation email has been sent to your inbox.</p>
+                    
+                    <div class="space-y-4">
+                        <button onclick="closeSuccessModal()" 
+                                class="w-full bg-industrial-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                            Return to Support Hub
+                        </button>
+                        <button onclick="printConfirmation()" 
+                                class="w-full bg-slate-100 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-200 transition-colors">
+                            Print Confirmation
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Success Modal (Hidden by default) -->
-    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
-            <div class="success-checkmark mx-auto mb-6">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Registration Successful!</h3>
-            <p class="text-gray-600 mb-6">Your Ridgesun PureRing warranty has been activated. Confirmation email sent to <span id="confirm-email" class="font-semibold"></span>.</p>
-            <div class="bg-gray-50 rounded-lg p-4 mb-6">
-                <div class="font-mono text-sm text-gray-700">Warranty ID: <span id="warranty-id" class="font-bold">RS-2024-001234</span></div>
-                <div class="text-sm text-gray-600 mt-1">Valid until: <span id="warranty-expiry" class="font-semibold">04/19/2027</span></div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="closeSuccessModal()" class="px-6 py-3 bg-industrial-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-                    Return to Support Hub
-                </button>
-                <button onclick="printConfirmation()" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
-                    Print Confirmation
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-industrial-gray text-white py-8">
+    <footer class="bg-industrial-primary text-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
-                            <span class="text-white font-bold">R</span>
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-industrial-accent rounded-lg flex items-center justify-center">
+                            <span class="text-xl font-bold">R</span>
                         </div>
-                        <span class="text-xl font-bold">Ridgesun</span>
+                        <span class="text-industrial-2xl font-bold">Ridgesun</span>
                     </div>
-                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
+                    <p class="text-slate-400 text-industrial-lg">Industrial Air Filtration Systems</p>
                 </div>
                 
                 <div class="text-center md:text-right">
-                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
-                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified</p>
+                    <p class="text-slate-400 text-industrial-lg mb-2">© 2024 Ridgesun Industries</p>
+                    <p class="text-slate-500 text-sm">Made in USA | ISO 9001 Certified</p>
                 </div>
             </div>
         </div>
@@ -414,135 +499,101 @@
     <!-- JavaScript -->
     <script>
         // Get serial number from localStorage
-        function loadSerialNumber() {
+        function getSerialNumber() {
             const serial = localStorage.getItem('ridgesun_serial');
-            const serialDisplay = document.getElementById('serial-display');
-            const serialHidden = document.getElementById('serial-hidden');
-            
             if (serial) {
-                serialDisplay.textContent = serial;
-                serialHidden.value = serial;
-            } else {
-                serialDisplay.textContent = 'No serial number detected';
-                // Show input field if no serial
-                editSerialNumber();
+                // Display serial number
+                document.getElementById('serial-display').textContent = serial;
+                document.getElementById('serial-number').value = serial;
+                document.getElementById('serial-display-section').classList.remove('hidden');
+                
+                // Update progress
+                updateProgress(25);
+                
+                return serial;
             }
+            return null;
         }
         
-        // Edit serial number
-        function editSerialNumber() {
-            const container = document.getElementById('serial-input-container');
-            const input = document.getElementById('serial-input');
-            const hidden = document.getElementById('serial-hidden');
-            const display = document.getElementById('serial-display');
+        // Clear serial number
+        function clearSerialNumber() {
+            localStorage.removeItem('ridgesun_serial');
+            document.getElementById('serial-number').value = '';
+            document.getElementById('serial-display-section').classList.add('hidden');
+            updateProgress(0);
             
-            container.classList.toggle('hidden');
-            
-            if (!container.classList.contains('hidden')) {
-                input.focus();
-                // Pre-fill with current value
-                input.value = hidden.value || '';
-            } else {
-                // Update from input
-                if (input.value.trim()) {
-                    hidden.value = input.value.trim();
-                    display.textContent = input.value.trim();
-                    // Save to localStorage
-                    localStorage.setItem('ridgesun_serial', input.value.trim());
-                }
-            }
+            // Show message
+            alert('Serial number cleared. Please scan QR code again or enter manually.');
         }
         
-        // Form validation and submission
-        document.getElementById('warranty-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Update progress bar
+        function updateProgress(percent) {
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercent = document.getElementById('progress-percent');
             
-            // Validate form
-            let isValid = true;
-            const inputs = this.querySelectorAll('input[required]');
+            progressFill.style.width = percent + '%';
+            progressPercent.textContent = percent + '%';
+        }
+        
+        // Validate form
+        function validateForm(formData) {
+            const errors = [];
             
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.classList.add('error');
-                    isValid = false;
-                } else {
-                    input.classList.remove('error');
-                }
-            });
+            // Name validation
+            if (!formData.get('full-name') || formData.get('full-name').trim().length < 2) {
+                errors.push('Please enter your full name');
+            }
             
-            // Validate email format
-            const emailInput = document.getElementById('email');
+            // Email validation
+            const email = formData.get('email');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (emailInput.value && !emailRegex.test(emailInput.value)) {
-                emailInput.classList.add('error');
-                isValid = false;
+            if (!email || !emailRegex.test(email)) {
+                errors.push('Please enter a valid email address');
             }
             
-            // Validate serial number
-            const serial = document.getElementById('serial-hidden').value;
-            if (!serial || serial.length < 10) {
-                alert('Please enter a valid serial number');
-                editSerialNumber();
-                isValid = false;
+            // Purchase date validation (MM/DD/YYYY)
+            const date = formData.get('purchase-date');
+            const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/;
+            if (!date || !dateRegex.test(date)) {
+                errors.push('Please enter purchase date in MM/DD/YYYY format');
             }
             
-            if (isValid) {
-                // Simulate form submission
-                simulateSubmission();
+            // Serial number validation
+            const serial = formData.get('serial-number');
+            if (!serial || serial.trim().length < 5) {
+                errors.push('Please enter a valid serial number');
             }
-        });
+            
+            return errors;
+        }
         
-        // Simulate form submission (in production, this would be a real API call)
-        function simulateSubmission() {
-            // Show loading state
-            const submitBtn = document.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Processing...';
-            submitBtn.disabled = true;
+        // Format date for display
+        function formatDate(dateString) {
+            const [month, day, year] = dateString.split('/');
+            const date = new Date(year, month - 1, day);
+            return date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+        
+        // Show success modal
+        function showSuccessModal(formData) {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('hidden');
             
-            // Simulate API delay
-            setTimeout(() => {
-                // Show success modal
-                const modal = document.getElementById('success-modal');
-                const email = document.getElementById('email').value;
-                document.getElementById('confirm-email').textContent = email;
-                
-                // Generate warranty expiry (3 years from purchase date)
-                const purchaseDate = new Date(document.getElementById('purchase-date').value);
-                const expiryDate = new Date(purchaseDate);
-                expiryDate.setFullYear(expiryDate.getFullYear() + 3);
-                
-                const formattedExpiry = (expiryDate.getMonth() + 1).toString().padStart(2, '0') + '/' + 
-                                       expiryDate.getDate().toString().padStart(2, '0') + '/' + 
-                                       expiryDate.getFullYear();
-                
-                document.getElementById('warranty-expiry').textContent = formattedExpiry;
-                
-                // Generate random warranty ID
-                const warrantyId = 'RS-' + new Date().getFullYear() + '-' + 
-                                 Math.floor(100000 + Math.random() * 900000);
-                document.getElementById('warranty-id').textContent = warrantyId;
-                
-                modal.classList.remove('hidden');
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // In production: Send data to backend
-                const formData = new FormData(document.getElementById('warranty-form'));
-                const data = Object.fromEntries(formData);
-                console.log('Warranty registration submitted:', data);
-                
-                // Store in localStorage for demo purposes
-                localStorage.setItem('ridgesun_warranty', JSON.stringify({
-                    ...data,
-                    warranty_id: warrantyId,
-                    expiry_date: formattedExpiry,
-                    registered_at: new Date().toISOString()
-                }));
-                
-            }, 1500);
+            // Store form data for printing
+            window.lastRegistrationData = {
+                name: formData.get('full-name'),
+                email: formData.get('email'),
+                serial: formData.get('serial-number'),
+                model: formData.get('model'),
+                date: formData.get('purchase-date'),
+                orderNumber: formData.get('order-number'),
+                timestamp: new Date().toISOString()
+            };
         }
         
         // Close success modal
@@ -553,53 +604,178 @@
         
         // Print confirmation
         function printConfirmation() {
-            const printContent = `
-                <div style="padding: 40px; font-family: Arial, sans-serif;">
-                    <h1 style="color: #1e3a8a; margin-bottom: 30px;">Ridgesun Warranty Confirmation</h1>
-                    <div style="margin-bottom: 20px;">
-                        <strong>Warranty ID:</strong> ${document.getElementById('warranty-id').textContent}<br>
-                        <strong>Valid Until:</strong> ${document.getElementById('warranty-expiry').textContent}<br>
-                        <strong>Customer Email:</strong> ${document.getElementById('confirm-email').textContent}
-                    </div>
-                    <p>Thank you for registering your Ridgesun PureRing warranty.</p>
-                    <p style="margin-top: 40px; font-size: 12px; color: #666;">
-                        Ridgesun Industries • Made in USA • ISO 9001 Certified
-                    </p>
-                </div>
-            `;
-            
+            const data = window.lastRegistrationData;
             const printWindow = window.open('', '_blank');
-            printWindow.document.write('<html><head><title>Warranty Confirmation</title></head><body>');
-            printWindow.document.write(printContent);
-            printWindow.document.write('</body></html>');
+            
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Ridgesun Warranty Confirmation</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; }
+                        .header { text-align: center; margin-bottom: 40px; }
+                        .confirmation-number { 
+                            background: #f1f5f9; 
+                            padding: 20px; 
+                            border-radius: 8px; 
+                            margin: 20px 0; 
+                            font-family: monospace; 
+                            font-size: 18px; 
+                        }
+                        .details { margin: 30px 0; }
+                        .detail-row { margin: 10px 0; }
+                        .label { font-weight: bold; color: #64748b; }
+                        .value { margin-left: 10px; }
+                        .footer { margin-top: 40px; color: #64748b; font-size: 12px; }
+                        @media print {
+                            body { padding: 0; }
+                            .no-print { display: none; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1>Ridgesun PureRing Warranty Registration</h1>
+                        <p>Confirmation Receipt</p>
+                    </div>
+                    
+                    <div class="confirmation-number">
+                        Confirmation: RIDGESUN-${Date.now().toString(36).toUpperCase()}
+                    </div>
+                    
+                    <div class="details">
+                        <div class="detail-row">
+                            <span class="label">Name:</span>
+                            <span class="value">${data.name}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Email:</span>
+                            <span class="value">${data.email}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Product Model:</span>
+                            <span class="value">PureRing ${data.model}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Serial Number:</span>
+                            <span class="value">${data.serial}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Purchase Date:</span>
+                            <span class="value">${formatDate(data.date)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Order Number:</span>
+                            <span class="value">${data.orderNumber || 'Not provided'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Registration Date:</span>
+                            <span class="value">${new Date(data.timestamp).toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            })}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="footer">
+                        <p>This document confirms your 5-year extended warranty registration.</p>
+                        <p>Keep this receipt for your records. Warranty coverage begins on purchase date.</p>
+                        <p>© 2024 Ridgesun Industries. All rights reserved.</p>
+                    </div>
+                    
+                    <div class="no-print" style="margin-top: 40px; text-align: center;">
+                        <button onclick="window.print()" style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                            Print Confirmation
+                        </button>
+                        <button onclick="window.close()" style="padding: 10px 20px; background: #64748b; color: white; border: none; border-radius: 6px; cursor: pointer; margin-left: 10px;">
+                            Close Window
+                        </button>
+                    </div>
+                </body>
+                </html>
+            `);
             printWindow.document.close();
-            printWindow.print();
         }
         
-        // Initialize date input with today's date
-        function initializeDateInput() {
-            const today = new Date();
-            const formattedDate = today.toISOString().split('T')[0];
-            document.getElementById('purchase-date').value = formattedDate;
+        // Form submission
+        document.getElementById('warranty-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Set min date to 1 year ago, max date to today
-            const oneYearAgo = new Date();
-            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-            document.getElementById('purchase-date').min = oneYearAgo.toISOString().split('T')[0];
-            document.getElementById('purchase-date').max = formattedDate;
-        }
+            const formData = new FormData(this);
+            const errors = validateForm(formData);
+            
+            if (errors.length > 0) {
+                alert('Please fix the following errors:\n\n' + errors.join('\n'));
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `
+                <svg class="animate-spin w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                Processing...
+            `;
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Update progress to 100%
+                updateProgress(100);
+                
+                // Show success modal
+                showSuccessModal(formData);
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Log submission
+                console.log('Warranty registration submitted:', {
+                    name: formData.get('full-name'),
+                    email: formData.get('email'),
+                    serial: formData.get('serial-number'),
+                    model: formData.get('model'),
+                    date: formData.get('purchase-date')
+                });
+            }, 1500);
+        });
         
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            loadSerialNumber();
-            initializeDateInput();
+            // Load serial number
+            getSerialNumber();
             
-            // Real-time validation
-            document.querySelectorAll('input').forEach(input => {
+            // Initialize date picker
+            const dateInput = document.getElementById('purchase-date');
+            dateInput.addEventListener('focus', function() {
+                if (!this.value) {
+                    const today = new Date();
+                    const month = String(today.getMonth() + 1).padStart(2, '0');
+                    const day = String(today.getDate()).padStart(2, '0');
+                    const year = today.getFullYear();
+                    this.value = `${month}/${day}/${year}`;
+                }
+            });
+            
+            // Update progress as user fills form
+            const formInputs = document.querySelectorAll('#warranty-form input, #warranty-form select');
+            formInputs.forEach(input => {
                 input.addEventListener('input', function() {
-                    this.classList.remove('error');
+                    const filledInputs = Array.from(formInputs).filter(i => i.value.trim().length > 0);
+                    const progress = Math.min(25 + (filledInputs.length / formInputs.length) * 50, 75);
+                    updateProgress(progress);
                 });
             });
+            
+            console.log('Warranty registration page loaded');
         });
     </script>
 </body>
