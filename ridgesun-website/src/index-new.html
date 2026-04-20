@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridgesun PureRing | Industrial Air Filtration Systems</title>
+    <meta name="description" content="Professional industrial air filtration systems - Ridgesun PureRing 1000 & 1000ie. HEPA H13 filtration for industrial, commercial, and healthcare environments.">
+    
+    <!-- Design System: Tailwind CSS with Industrial Design Tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Industrial Color System
+                        'industrial': {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        // Tech Blue System
+                        'tech': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        // Safety Colors
+                        'safety': {
+                            'red': '#dc2626',
+                            'yellow': '#f59e0b',
+                            'green': '#059669',
+                            'orange': '#f97316',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'SF Mono', 'Monaco', 'monospace'],
+                    },
+                    fontSize: {
+                        // Industrial Typography Scale
+                        'industrial-xs': ['0.75rem', { lineHeight: '1rem' }],      // 12px
+                        'industrial-sm': ['0.875rem', { lineHeight: '1.25rem' }],  // 14px
+                        'industrial-base': ['1.125rem', { lineHeight: '1.75rem' }], // 18px
+                        'industrial-lg': ['1.25rem', { lineHeight: '1.75rem' }],   // 20px
+                        'industrial-xl': ['1.5rem', { lineHeight: '2rem' }],       // 24px
+                        'industrial-2xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
+                        'industrial-3xl': ['2.25rem', { lineHeight: '2.5rem' }],   // 36px
+                        'industrial-4xl': ['3rem', { lineHeight: '1' }],           // 48px
+                        'industrial-5xl': ['3.75rem', { lineHeight: '1' }],        // 60px
+                    },
+                    spacing: {
+                        'industrial-1': '0.25rem',   // 4px
+                        'industrial-2': '0.5rem',    // 8px
+                        'industrial-3': '0.75rem',   // 12px
+                        'industrial-4': '1rem',      // 16px
+                        'industrial-6': '1.5rem',    // 24px
+                        'industrial-8': '2rem',      // 32px
+                        'industrial-12': '3rem',     // 48px
+                        'industrial-16': '4rem',     // 64px
+                    },
+                    borderRadius: {
+                        'industrial-sm': '0.25rem',  // 4px
+                        'industrial-md': '0.5rem',   // 8px
+                        'industrial-lg': '0.75rem',  // 12px
+                        'industrial-xl': '1rem',     // 16px
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Inter + Roboto Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <!-- Industrial Design System CSS -->
+    <style>
+        /* Industrial Design System Variables */
+        :root {
+            /* Color Tokens */
+            --industrial-900: #0f172a;
+            --industrial-800: #1e293b;
+            --industrial-700: #334155;
+            --tech-600: #2563eb;
+            --tech-500: #3b82f6;
+            --safety-red: #dc2626;
+            --safety-green: #059669;
+            --safety-yellow: #f59e0b;
+            
+            /* Typography Tokens */
+            --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Roboto Mono', 'SF Mono', Monaco, monospace;
+            
+            /* Spacing Tokens */
+            --spacing-unit: 0.25rem;
+            --spacing-4: calc(var(--spacing-unit) * 4); /* 16px */
+            --spacing-8: calc(var(--spacing-unit) * 8); /* 32px */
+            
+            /* Border Radius Tokens */
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            
+            /* Shadow Tokens */
+            --shadow-industrial: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
+            --shadow-tech: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--font-display);
+            font-size: 1.125rem; /* 18px for mobile readability */
+            line-height: 1.75;
+            color: var(--industrial-700);
+            background-color: #f8fafc;
+        }
+        
+        /* Industrial Components */
+        .industrial-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-8);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-industrial);
+        }
+        
+        .industrial-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--tech-500);
+            box-shadow: var(--shadow-tech);
+        }
+        
+        .safety-alert {
+            border-left: 4px solid;
+            padding: var(--spacing-4);
+            border-radius: var(--radius-md);
+            background-color: #fef2f2;
+            border-color: var(--safety-red);
+        }
+        
+        .safety-alert.warning {
+            background-color: #fffbeb;
+            border-color: var(--safety-yellow);
+        }
+        
+        .safety-alert.success {
+            background-color: #f0fdf4;
+            border-color: var(--safety-green);
+        }
+        
+        .tech-badge {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, var(--industrial-800) 0%, var(--industrial-900) 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+        
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+        
+        .step {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .step-number {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--industrial-600);
+        }
+        
+        .step.active .step-number {
+            background-color: var(--tech-600);
+            border-color: var(--tech-600);
+            color: white;
+        }
+        
+        /* QR Scanner Simulation */
+        .qr-scanner {
+            background: linear-gradient(135deg, var(--industrial-900) 0%, var(--industrial-800) 100%);
+            border: 2px dashed #475569;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qr-scanner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--tech-500), transparent);
+            animation: scan 2s ease-in-out infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Touch Optimization */
+        @media (max-width: 640px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-bottom-nav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                border-top: 2px solid #e2e8f0;
+                padding: 0.75rem;
+                z-index: 50;
+            }
+        }
+        
+        /* Performance Optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        :focus {
+            outline: 2px solid var(--tech-500);
+            outline-offset: 2px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-display bg-industrial-50">
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-tech-600 text-white px-4 py-2 rounded-industrial-md z-50">
+        Skip to main content
+    </a>
+
+    <!-- Industrial Header -->
+    <header class="bg-industrial-900 text-white" role="banner">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-12 h-12 bg-tech-600 rounded-industrial-lg flex items-center justify-center" aria-hidden="true">
+                        <span class="text-white font-bold text-xl">RS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-industrial-2xl font-bold">
+                            <span class="block">Ridgesun</span>
+                            <span class="block text-tech-400 font-semibold text-industrial-lg">PureRing</span>
+                        </h1>
+                        <p class="text-industrial-500 text-industrial-sm">Industrial Air Filtration Systems</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
+                    <a href="/go" class="text-white hover:text-tech-300 font-medium transition-colors touch-target">QR Hub</a>
+                    <a href="/installation" class="text-white hover:text-tech-300 font-medium transition-colors touch-target">Installation</a>
+                    <a href="/products" class="text-white hover:text-tech-300 font-medium transition-colors touch-target">Products</a>
+                    <a href="/warranty" class="text-white hover:text-tech-300 font-medium transition-colors touch-target">Warranty</a>
+                    <a href="/shop" class="bg-tech-600 hover:bg-tech-700 text-white px-6 py-2 rounded-industrial-md font-semibold transition-colors touch-target">Shop Filters</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden touch-target" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container mx-auto px-4 py-12" role="main">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-industrial-4xl md:text-industrial-5xl font-bold text-industrial-900 mb-6">
+                Industrial-Grade
+                <span class="block text-tech-600">Air Filtration</span>
+            </h1>
+            <p class="text-industrial-xl text-industrial-600 max-w-3xl mx-auto mb-10">
+                Ridgesun PureRing systems deliver professional air purification for industrial, commercial, and healthcare environments with HEPA H13 filtration efficiency.
+            </p>
+            
+            <!-- QR Scanner Simulation -->
+            <div class="qr-scanner rounded-industrial-xl p-8 max-w-2xl mx-auto mb-12">
+                <div class="relative z-10">
+                    <div class="text-6xl mb-6" aria-hidden="true">📱</div>
+                    <h2 class="text-industrial-2xl font-bold text-white mb-4">Scan QR Code for Support</h2>
+                    <p class="text-tech-300 mb-6">
+                        Customers scan the QR code on their PureRing unit to access installation videos, warranty registration, and genuine filter purchases.
+                    </p>
+                    <a href="/go" class="inline-flex items-center px-8 py-4 bg-white text-industrial-900 font-bold rounded-industrial-lg hover:bg-industrial-100 transition-colors touch-target">
+                        <span>Go to Support Hub</span>
+                        <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Alert -->
+        <div class="safety-alert warning mb-12">
+            <div class="flex items-start">
+                <svg class="w-6 h-6 text-safety-yellow mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.998-.833-2.732 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <div>
+                    <h3 class="font-bold text-industrial-900">Important Safety Notice</h3>
+                    <p class="text-industrial-700">
+                        Always follow proper installation procedures. Ensure power is disconnected before maintenance. Use appropriate personal protective equipment (PPE) when handling filters.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Line -->
+        <section class="mb-16">
+            <h2 class="text-industrial-3xl font-bold text-industrial-900 text-center mb-12">PureRing Product Line</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PureRing 1000 -->
+                <article class="industrial-card">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-tech-50 rounded-industrial-lg flex items-center justify-center mr-4" aria-hidden="true">
+                            <span class="text-3xl">🏭</span>
+                        </div>
+                        <div>
+                            <h3 class="text-industrial-2xl font-bold text-industrial-900">PureRing 1000</h3>
+                            <p class="text-industrial-600">Standard Industrial Model</p>
+                            <span class="tech-badge inline-block mt-2">HEPA H13</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>HEPA H13 filtration (99.97% @ 0.3µm)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>MERV 11 pre-filter for extended life</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Manual controls with LED status indicators</span>
+                        </li>
+                    </ul>
+                    <a href="/installation?model=1000" class="inline-flex items-center text-tech-600 font-semibold hover:text-tech-700 touch-target">
+                        <span>View Installation Guide</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- PureRing 1000ie -->
+                <article class="industrial-card">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-safety-green/10 rounded-industrial-lg flex items-center justify-center mr-4" aria-hidden="true">
+                            <span class="text-3xl">🤖</span>
+                        </div>
+                        <div>
+                            <h3 class="text-industrial-2xl font-bold text-industrial-900">PureRing 1000ie</h3>
+                            <p class="text-industrial-600">Smart Industrial Model</p>
+                            <span class="tech-badge inline-block mt-2">WiFi + IoT</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>All PureRing 1000 features plus smart connectivity</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>WiFi connectivity & mobile app control</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-safety-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Real-time air quality monitoring & alerts</span>
+                        </li>
+                    </ul>
+                    <a href="/installation?model=1000ie" class="inline-flex items-center text-tech-600 font-semibold hover:text-tech-700 touch-target">
+                        <span>View Smart Features</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section class="mb-16">
+            <h2 class="text-industrial-3xl font-bold text-industrial-900 text-center mb-12">Quick Access Support</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/installation" class="industrial-card hover:border-tech-500 group touch-target">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">🎥</div>
+                    <h3 class="text-industrial-xl font-bold mb-2 text-industrial-900">Installation Videos</h3>
+                    <p class="text-industrial-600">Step-by-step setup guides with safety instructions</p>
+                </a>
+                
+                <a href="/warranty" class="industrial-card hover:border-tech-500 group touch-target">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">📝</div>
+                    <h3 class="text-industrial-xl font-bold mb-2 text-industrial-900">Warranty Registration</h3>
+                    <p class="text-industrial-600">Activate your 3-year warranty coverage online</p>
+                </a>
+                
+                <a href="/shop" class="industrial-card hover:border-tech-500 group touch-target">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform" aria-hidden="true">🛒</div>
+                    <h3 class="text-industrial-xl font-bold mb-2 text-industrial-900">Genuine Filters</h3>
+                    <p class="text-industrial-600">Purchase HEPA H13 & MERV 11 replacement filters</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="mb-16">
+            <h2 class="text-industrial-3xl font-bold text-industrial-900 text-center mb-10">Technical Specifications</h2>
+            <div class="industrial-card overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-industrial-base">
+                        <thead class="bg-industrial-50">
+                            <tr>
+                                <th class="text-left p-4 font-semibold text-industrial-900 border-b border-industrial-200">Specification</th>
+                                <th class="text-left p-4 font-semibold text-industrial-900 border-b border-industrial-200">PureRing 1000</th>
+                                <th class="text-left p-4 font-semibold text-industrial-900 border-b border-industrial-200">PureRing 1000ie</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-industrial-200">
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Filtration Efficiency</td>
+                                <td class="p-4 text-industrial-700 font-mono">99.97% @ 0.3µm</td>
+                                <td class="p-4 text-industrial-700 font-mono">99.97% @ 0.3µm</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Airflow Rate</td>
+                                <td class="p-4 text-industrial-700 font-mono">350 CFM</td>
+                                <td class="p-4 text-industrial-700 font-mono">350 CFM</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Noise Level</td>
+                                <td class="p-4 text-industrial-700 font-mono">55 dB(A)</td>
+                                <td class="p-4 text-industrial-700 font-mono">55 dB(A)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Power Consumption</td>
+                                <td class="p-4 text-industrial-700 font-mono">120W</td>
+                                <td class="p-4 text-industrial-700 font-mono">120W</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Weight</td>
+                                <td class="p-4 text-industrial-700 font-mono">85 lbs (38.5 kg)</td>
+                                <td class="p-4 text-industrial-700 font-mono">87 lbs (39.5 kg)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-industrial-900">Warranty</td>
+                                <td class="p-4 text-industrial-700">3 Years</td>
+                                <td class="p-4 text-industrial-700">3 Years</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Process -->
+        <section class="mb-16">
+            <h2 class="text-industrial-3xl font-bold text-industrial-900 text-center mb-12">Simple Installation Process</h2>
+            <div class="step-indicator mb-8">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="mt-2 text-industrial-sm font-medium text-industrial-900">Unpack</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="mt-2 text-industrial-sm font-medium text-industrial-600">Position</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="mt-2 text-industrial-sm font-medium text-industrial-600">Connect</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="mt-2 text-industrial-sm font-medium text-industrial-600">Test</div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/installation" class="inline-flex items-center px-8 py-4 bg-tech-600 hover:bg-tech-700 text-white font-bold rounded-industrial-lg transition-colors touch-target">
+                    <span>View Complete Installation Guide</span>
+                    <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Industrial Footer -->
+    <footer class="bg-industrial-900 text-white py-12" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-tech-600 rounded-industrial-md flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-industrial-xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-industrial-500 text-industrial-base">Industrial Air Filtration Systems</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-industrial-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/go" class="text-industrial-400 hover:text-white transition-colors touch-target">QR Support Hub</a></li>
+                        <li><a href="/installation" class="text-industrial-400 hover:text-white transition-colors touch-target">Installation Guides</a></li>
+                        <li><a href="/products" class="text-industrial-400 hover:text-white transition-colors touch-target">Product Specifications</a></li>
+                        <li><a href="/warranty" class="text-industrial-400 hover:text-white transition-colors touch-target">Warranty Registration</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-industrial-lg font-bold mb-4">Contact Support</h3>
+                    <ul class="space-y-2">
+                        <li class="text-industrial-400">Email: support@ridgesun.com</li>
+                        <li class="text-industrial-400">Phone: +1 (800) 555-FILTER</li>
+                        <li class="text-industrial-400">Hours: Mon-Fri 8AM-6PM EST</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-industrial-800 text-center">
+                <p class="text-industrial-500 text-industrial-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
+                <p class="text-industrial-600 text-industrial-xs">Made in USA | ISO 9001:2015 Certified | UL Listed</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav md:hidden" aria-label="Mobile navigation">
+        <div class="flex justify-around">
+            <a href="/go" class="flex flex-col items-center text-industrial-600 hover:text-tech-600 transition-colors touch-target" aria-label="QR Hub">
+                <span class="text-2xl mb-1">📱</span>
+                <span class="text-industrial-xs font-medium">QR Hub</span>
+            </a>
+            <a href="/installation" class="flex flex-col items-center text-industrial-600 hover:text-tech-600 transition-colors touch-target" aria-label="Installation">
+                <span class="text-2xl mb-1">🔧</span>
+                <span class="text-industrial-xs font-medium">Install</span>
+            </a>
+            <a href="/warranty" class="flex flex-col items-center text-industrial-600 hover:text-tech-600 transition-colors touch-target" aria-label="Warranty">
+                <span class="text-2xl mb-1">📝</span>
+                <span class="text-industrial-xs font-medium">Warranty</span>
+            </a>
+            <a href="/shop" class="flex flex-col items-center text-industrial-600 hover:text-tech-600 transition-colors touch-target" aria-label="Shop">
+                <span class="text-2xl mb-1">🛒</span>
+                <span class="text-industrial-xs font-medium">Shop</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- JavaScript -->
+    <script>
+        // Industrial Design System JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const menuButton = document.querySelector('[aria-label="Open menu"]');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !expanded);
+                    // In a real implementation, this would toggle a mobile menu
+                    alert('Mobile menu would open here. In production, implement a proper mobile menu.');
+                });
+            }
+            
+            // Serial Number Detection (for QR simulation)
+            const urlParams = new URLSearchParams(window.location.search);
+            const serial = urlParams.get('sn');
+            
+            if (serial) {
+                // Save to localStorage for other pages
+                localStorage.setItem('ridgesun_serial', serial);
+                console.log('Serial number detected:', serial);
+                
+                // Show notification
+                showNotification(`Serial number detected: ${serial}`);
+            }
+            
+            // Model Parameter Detection
+            const model = urlParams.get('model');
+            if (model && (model === '1000' || model === '1000ie')) {
+                console.log('Model specified:', model);
+                // Could pre-select model on installation page
+            }
+            
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Performance Monitoring
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    const timing = performance.timing;
+                    const loadTime = timing.loadEventEnd - timing.navigationStart;
+                    console.log(`Page loaded in ${loadTime}ms`);
+                    
+                    // Report to analytics if load time is too slow
+                    if (loadTime > 2000) {
+                        console.warn('Page load time exceeds 2 seconds');
+                    }
+                });
+            }
+            
+            // Helper Functions
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-tech-600 text-white px-6 py-4 rounded-industrial-lg shadow-lg z-50 flex items-center';
+                notification.setAttribute('role', 'alert');
+                notification.innerHTML = `
+                    <svg class="w-6 h-6 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <span>${message}</span>
+                `;
+                document.body.appendChild(notification);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    notification.remove();
+                }, 5000);
+            }
+            
+            // Industrial Design System: Initialize components
+            initializeIndustrialComponents();
+        });
+        
+        function initializeIndustrialComponents() {
+            // Initialize safety alerts
+            document.querySelectorAll('.safety-alert').forEach(alert => {
+                if (!alert.getAttribute('role')) {
+                    alert.setAttribute('role', 'alert');
+                }
+            });
+            
+            // Initialize touch targets for accessibility
+            document.querySelectorAll('.touch-target').forEach(element => {
+                if (!element.getAttribute('role') && element.tagName !== 'A' && element.tagName !== 'BUTTON') {
+                    element.setAttribute('role', 'button');
+                }
+            });
+            
+            // Lazy load images (simplified)
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                            }
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        }
+        
+        // Industrial Design System: Performance optimization
+        window.addEventListener('beforeunload', function() {
+            // Clean up resources if needed
+        });
+    </script>
+</body>
+</html>

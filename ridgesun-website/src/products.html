@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Center | Ridgesun PureRing</title>
+    <meta name="description" content="Complete specifications and technical details for Ridgesun PureRing industrial air filtration systems">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial': {
+                            'primary': '#0f172a',
+                            'secondary': '#1e293b',
+                            'accent': '#2563eb',
+                            'danger': '#dc2626',
+                            'warning': '#f59e0b',
+                            'success': '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    },
+                    fontSize: {
+                        'industrial-lg': '1.125rem',
+                        'industrial-xl': '1.25rem',
+                        'industrial-2xl': '1.5rem',
+                        'industrial-3xl': '1.875rem',
+                        'industrial-4xl': '2.25rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        .spec-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .spec-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1);
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 0.05em;
+        }
+        
+        .cert-badge {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        
+        .spec-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .spec-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+            text-align: left;
+            padding: 16px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .spec-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .spec-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .comparison-highlight {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border-left: 4px solid #2563eb;
+        }
+        
+        @media (max-width: 768px) {
+            .spec-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-display text-slate-900">
+    <!-- Header -->
+    <header class="bg-industrial-primary text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-industrial-accent rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold">🏭</span>
+                        </div>
+                        <div>
+                            <h1 class="text-industrial-3xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-slate-300 text-industrial-lg">Product Center</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="/go" class="text-white hover:text-slate-300 font-medium text-industrial-lg">QR Hub</a>
+                    <a href="/products" class="text-white font-bold text-industrial-lg border-b-2 border-white">Products</a>
+                    <a href="/installation" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Installation</a>
+                    <a href="/warranty" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Warranty</a>
+                    <a href="/shop" class="text-white hover:text-slate-300 font-medium text-industrial-lg">Shop</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <div class="mb-12">
+            <div class="text-center mb-10">
+                <h2 class="text-industrial-4xl font-bold text-industrial-primary mb-6">PureRing Industrial Air Filtration</h2>
+                <p class="text-slate-600 text-industrial-xl max-w-3xl mx-auto">
+                    Professional-grade air purification systems designed for industrial environments, manufacturing facilities, and clean rooms.
+                </p>
+            </div>
+            
+            <!-- Product Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- PureRing 1000 -->
+                <div class="spec-card rounded-2xl p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-industrial-3xl font-bold text-industrial-primary">PureRing 1000</h3>
+                            <p class="text-slate-600 text-industrial-lg">Standard Industrial Model</p>
+                        </div>
+                        <div class="tech-badge text-white px-4 py-2 rounded-lg">
+                            <span class="font-mono">STANDARD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center text-slate-600 mb-4">
+                            <svg class="w-5 h-5 mr-2 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            <span>5-Year Warranty</span>
+                        </div>
+                        
+                        <p class="text-slate-600 mb-6">
+                            Robust industrial air filtration system with manual controls, designed for heavy-duty applications in manufacturing and production environments.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">HEPA H13</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">MERV 11 Pre-filter</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">85 lbs</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">120V/60Hz</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="#spec-1000" class="block w-full bg-industrial-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                            View Specifications
+                        </a>
+                        <a href="/installation?model=1000" class="block w-full bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 transition-colors text-center">
+                            Installation Guide
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PureRing 1000ie -->
+                <div class="spec-card rounded-2xl p-8 comparison-highlight">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-industrial-3xl font-bold text-industrial-primary">PureRing 1000ie</h3>
+                            <p class="text-slate-600 text-industrial-lg">Smart Industrial Model</p>
+                        </div>
+                        <div class="tech-badge bg-green-600 text-white px-4 py-2 rounded-lg">
+                            <span class="font-mono">SMART</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center text-slate-600 mb-4">
+                            <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                            <span>WiFi + Mobile App</span>
+                        </div>
+                        
+                        <p class="text-slate-600 mb-6">
+                            Advanced smart filtration system with real-time air quality monitoring, remote control, and predictive maintenance features.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">PM2.5/PM10 Sensors</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Filter Life Tracking</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Mobile App</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">API Access</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="#spec-1000ie" class="block w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors text-center">
+                            View Smart Features
+                        </a>
+                        <a href="/installation?model=1000ie" class="block w-full bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 transition-colors text-center">
+                            Smart Setup Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="mb-16">
+            <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-10 text-center">Technical Specifications</h3>
+            
+            <!-- Comparison Table -->
+            <div class="overflow-hidden rounded-2xl mb-12">
+                <table class="spec-table w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Specification</th>
+                            <th class="w-3/8">PureRing 1000</th>
+                            <th class="w-3/8">PureRing 1000ie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Physical Specifications -->
+                        <tr class="bg-slate-50">
+                            <td colspan="3" class="font-bold text-slate-700 text-industrial-lg">Physical Specifications</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Dimensions (H×W×D)</td>
+                            <td>24" × 18" × 12" (61×46×30 cm)</td>
+                            <td>24" × 18" × 12" (61×46×30 cm)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Weight</td>
+                            <td>85 lbs (38.5 kg)</td>
+                            <td>87 lbs (39.5 kg)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Construction</td>
+                            <td>16-gauge steel, powder-coated</td>
+                            <td>16-gauge steel, powder-coated</td>
+                        </tr>
+                        
+                        <!-- Filtration Performance -->
+                        <tr class="bg-slate-50">
+                            <td colspan="3" class="font-bold text-slate-700 text-industrial-lg">Filtration Performance</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">HEPA Filter</td>
+                            <td>H13 (99.97% @ 0.3μm)</td>
+                            <td>H13 (99.97% @ 0.3μm)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Pre-filter</td>
+                            <td>MERV 11 (85% @ 1-3μm)</td>
+                            <td>MERV 11 (85% @ 1-3μm)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Air Flow Rate</td>
+                            <td>350 CFM (595 m³/h)</td>
+                            <td>350 CFM (595 m³/h)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Noise Level</td>
+                            <td>55 dB(A) @ 1m</td>
+                            <td>55 dB(A) @ 1m</td>
+                        </tr>
+                        
+                        <!-- Electrical Specifications -->
+                        <tr class="bg-slate-50">
+                            <td colspan="3" class="font-bold text-slate-700 text-industrial-lg">Electrical Specifications</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Power Supply</td>
+                            <td>120V AC, 60Hz</td>
+                            <td>120V AC, 60Hz</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Power Consumption</td>
+                            <td>180W (max)</td>
+                            <td>200W (max)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Motor Type</td>
+                            <td>ECM Brushless</td>
+                            <td>ECM Brushless</td>
+                        </tr>
+                        
+                        <!-- Smart Features -->
+                        <tr class="bg-slate-50">
+                            <td colspan="3" class="font-bold text-slate-700 text-industrial-lg">Smart Features (1000ie only)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Air Quality Sensors</td>
+                            <td class="text-slate-400">-</td>
+                            <td>PM2.5, PM10, Temperature, Humidity</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Connectivity</td>
+                            <td class="text-slate-400">-</td>
+                            <td>WiFi 2.4GHz, Bluetooth 5.0</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Mobile App</td>
+                            <td class="text-slate-400">-</td>
+                            <td>iOS & Android (Ridgesun App)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">API Access</td>
+                            <td class="text-slate-400">-</td>
+                            <td>REST API, WebSocket</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Filter Life Tracking</td>
+                            <td class="text-slate-400">-</td>
+                            <td>Real-time monitoring with alerts</td>
+                        </tr>
+                        
+                        <!-- Certifications -->
+                        <tr class="bg-slate-50">
+                            <td colspan="3" class="font-bold text-slate-700 text-industrial-lg">Certifications & Standards</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Safety Standards</td>
+                            <td>UL 507, CSA C22.2</td>
+                            <td>UL 507, CSA C22.2</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">EMC Compliance</td>
+                            <td>FCC Part 15, CE</td>
+                            <td>FCC Part 15, CE</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-slate-700">Quality Standards</td>
+                            <td>ISO 9001:2015</td>
+                            <td>ISO 9001:2015</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Detailed Specifications -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PureRing 1000 Details -->
+                <div id="spec-1000" class="spec-card rounded-2xl p-8">
+                    <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">PureRing 1000 Details</h4>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Key Features</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-industrial-accent mr-2">•</span>
+                                    <span>Three-speed manual control (Low/Medium/High)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-industrial-accent mr-2">•</span>
+                                    <span>LED status indicators (Power, Filter Life)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-industrial-accent mr-2">•</span>
+                                    <span>Tool-less filter replacement design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-industrial-accent mr-2">•</span>
+                                    <span>Wall-mount or free-standing operation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-industrial-accent mr-2">•</span>
+                                    <span>Overload protection and thermal cutoff</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Recommended Applications</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    <span>Manufacturing facilities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    <span>Woodworking shops</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    <span>Auto repair garages</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    <span>Laboratories (non-critical)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    <span>Commercial kitchens (grease filtration)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Maintenance Schedule</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">🔄</span>
+                                    <span>Pre-filter: Replace every 3 months</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-500 mr-2">🔄</span>
+                                    <span>HEPA filter: Replace every 6 months</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">🧹</span>
+                                    <span>Exterior cleaning: Monthly</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">🔧</span>
+                                    <span>Motor inspection: Annually</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PureRing 1000ie Details -->
+                <div id="spec-1000ie" class="spec-card rounded-2xl p-8 comparison-highlight">
+                    <h4 class="text-industrial-2xl font-bold text-industrial-primary mb-6">PureRing 1000ie Smart Features</h4>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Smart Monitoring</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2">📊</span>
+                                    <span>Real-time PM2.5/PM10 particle monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2">📊</span>
+                                    <span>Temperature and humidity tracking</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2">📊</span>
+                                    <span>Filter life prediction with usage analytics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2">📊</span>
+                                    <span>Energy consumption monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-600 mr-2">📊</span>
+                                    <span>Air quality history (30-day retention)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Remote Control</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">📱</span>
+                                    <span>iOS & Android mobile app</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">📱</span>
+                                    <span>Web dashboard for desktop access</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">📱</span>
+                                    <span>Scheduled operation (daily/weekly)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">📱</span>
+                                    <span>Auto-mode based on air quality</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 mr-2">📱</span>
+                                    <span>Multi-unit management (up to 50 units)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-3">Integration & API</h5>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">🔌</span>
+                                    <span>REST API for custom integrations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">🔌</span>
+                                    <span>WebSocket for real-time updates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">🔌</span>
+                                    <span>IFTTT integration for automation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">🔌</span>
+                                    <span>Slack/Teams notifications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">🔌</span>
+                                    <span>Building management system (BMS) compatibility</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="mb-16">
+            <h3 class="text-industrial-3xl font-bold text-industrial-primary mb-10 text-center">Certifications & Standards</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="spec-card rounded-2xl p-8 text-center">
+                    <div class="feature-icon mx-auto mb-6">
+                        <span class="text-white text-xl">⚡</span>
+                    </div>
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">Electrical Safety</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>UL 507 Certified</li>
+                        <li>CSA C22.2 No. 113</li>
+                        <li>FCC Part 15 Compliant</li>
+                        <li>CE Marked (EU)</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-card rounded-2xl p-8 text-center">
+                    <div class="feature-icon mx-auto mb-6 bg-green-600">
+                        <span class="text-white text-xl">🏭</span>
+                    </div>
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">Quality Standards</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>ISO 9001:2015</li>
+                        <li>Made in USA</li>
+                        <li>RoHS Compliant</li>
+                        <li>WEEE Compliant</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-card rounded-2xl p-8 text-center">
+                    <div class="feature-icon mx-auto mb-6 bg-amber-600">
+                        <span class="text-white text-xl">📋</span>
+                    </div>
+                    <h4 class="text-industrial-xl font-bold text-industrial-primary mb-3">Performance Standards</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>ASHRAE 52.2 Compliant</li>
+                        <li>EN 1822-1:2019</li>
+                        <li>IEST-RP-CC001.6</li>
+                        <li>FDA CFR Title 21</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Resources -->
+        <div class="bg-industrial-primary text-white rounded-2xl p-8 mb-16">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-industrial-3xl font-bold mb-4">Technical Documentation</h3>
+                    <p class="text-slate-300 text-industrial-lg">Download complete technical specifications, manuals, and CAD files.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <a href="#" class="block bg-industrial-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors text-center" onclick="alert('Download will be available after deployment'); return false;">
+                        Download Full Spec Sheet (PDF)
+                    </a>
+                    <a href="#" class="block bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-600 transition-colors text-center" onclick="alert('Download will be available after deployment'); return false;">
+                        CAD Files & Drawings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-industrial-accent rounded-lg flex items-center justify-center">
+                            <span class="text-xl font-bold">R</span>
+                        </div>
+                        <span class="text-industrial-2xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-slate-400 text-industrial-lg">Industrial Air Filtration Systems</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-slate-400 text-industrial-lg mb-2">© 2024 Ridgesun Industries</p>
+                    <p class="text-slate-500 text-sm">Made in USA | ISO 9001 Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scroll to specifications
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add visual feedback to spec cards
+            document.querySelectorAll('.spec-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Log page view
+            console.log('Product center page loaded');
+        });
+    </script>
+</body>
+</html>
