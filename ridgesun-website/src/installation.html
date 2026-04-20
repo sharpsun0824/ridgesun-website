@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安装指南 - RidgeSun 空气过滤器</title>
+    <meta name="description" content="RidgeSun 空气过滤器安装视频教程和图文指南">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/installation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏（与首页相同） -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/assets/logo.svg" alt="RidgeSun Logo" width="120" height="40">
+                <span class="logo-text">RidgeSun</span>
+            </a>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">首页</a>
+                <a href="/installation" class="nav-link active">安装指南</a>
+                <a href="/warranty" class="nav-link">质保注册</a>
+                <a href="/purchase" class="nav-link">购买滤网</a>
+                <a href="/support" class="nav-link">支持</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 安装指南主内容 -->
+    <main class="installation-main">
+        <div class="container">
+            <!-- CRITICAL SAFETY ALERT -->
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-xl font-bold text-red-800 mb-2">⚠️ CRITICAL SAFETY ALERT</h3>
+                        <p class="text-red-700 font-bold text-lg">IMPORTANT: Install the side handles BEFORE lifting the heavy unit out of the box!</p>
+                        <p class="text-red-600 mt-2">Failure to install handles first may result in injury or damage to the unit. The PureRing 1000 weighs 85 lbs (38.5 kg).</p>
+                    </div>
+                </div>
+            </div>
+
+            <header class="installation-header">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">PureRing Installation Guide</h1>
+                <p class="subtitle text-gray-600 text-lg mb-6">Professional installation guide for Ridgesun PureRing 1000 & 1000ie industrial air filtration systems</p>
+                
+                <!-- Model Selector -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 mb-8">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Select Your Model</h3>
+                    <div class="flex space-x-4">
+                        <button id="model-1000" class="model-selector active px-6 py-3 rounded-lg font-semibold border-2 border-industrial-blue bg-industrial-blue text-white">
+                            PureRing 1000
+                        </button>
+                        <button id="model-1000ie" class="model-selector px-6 py-3 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:border-industrial-blue hover:text-industrial-blue">
+                            PureRing 1000ie (Smart)
+                        </button>
+                    </div>
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p id="model-description">Standard industrial model with manual controls and basic filtration monitoring.</p>
+                    </div>
+                </div>
+                
+                <div class="video-meta flex flex-wrap gap-4 text-gray-600">
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Duration: 15 minutes
+                    </span>
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                        Tools: Phillips screwdriver, level
+                    </span>
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        Safety: 2-person lift recommended
+                    </span>
+                </div>
+            </header>
+
+            <!-- Video Player -->
+            <section class="video-player-section mb-12">
+                <div class="bg-gray-900 rounded-xl overflow-hidden">
+                    <!-- Responsive Video Container -->
+                    <div class="relative pt-[56.25%]"> <!-- 16:9 Aspect Ratio -->
+                        <div id="video-placeholder" class="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-20 h-20 mx-auto mb-4 bg-industrial-blue rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors" onclick="playVideo()">
+                                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-white text-lg font-semibold">Click to play installation video</p>
+                                <p class="text-gray-400 mt-2">PureRing 1000 Installation Guide</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Smart Model Video (Hidden by default) -->
+                        <div id="smart-video-placeholder" class="absolute inset-0 bg-gray-800 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="w-20 h-20 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-700 transition-colors" onclick="playSmartVideo()">
+                                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-white text-lg font-semibold">Click to play smart installation video</p>
+                                <p class="text-gray-400 mt-2">PureRing 1000ie Smart Features Setup</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Controls -->
+                    <div class="bg-gray-800 p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <button id="play-btn" class="flex items-center space-x-2 px-4 py-2 bg-industrial-blue text-white rounded-lg hover:bg-blue-700 transition-colors" onclick="playVideo()">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                                <span>Play</span>
+                            </button>
+                            <button id="pause-btn" class="flex items-center space-x-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors hidden" onclick="pauseVideo()">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                                </svg>
+                                <span>Pause</span>
+                            </button>
+                            <button class="flex items-center space-x-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors" onclick="toggleFullscreen()">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path>
+                                </svg>
+                                <span>Fullscreen</span>
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+                                </svg>
+                                <input type="range" min="0" max="100" value="80" class="w-24 accent-industrial-blue" id="volume-slider" onchange="changeVolume(this.value)">
+                            </div>
+                            
+                            <div class="text-gray-400 text-sm">
+                                <span id="current-time">0:00</span> / <span id="total-time">15:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Chapters -->
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(0)">
+                        <div class="text-sm text-gray-500 mb-1">Chapter 1</div>
+                        <h4 class="font-semibold text-gray-900">Unboxing & Safety</h4>
+                        <p class="text-sm text-gray-600 mt-1">0:00 - 2:30</p>
+                    </div>
+                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(150)">
+                        <div class="text-sm text-gray-500 mb-1">Chapter 2</div>
+                        <h4 class="font-semibold text-gray-900">Handle Installation</h4>
+                        <p class="text-sm text-gray-600 mt-1">2:30 - 5:45</p>
+                    </div>
+                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(345)">
+                        <div class="text-sm text-gray-500 mb-1">Chapter 3</div>
+                        <h4 class="font-semibold text-gray-900">Mounting & Leveling</h4>
+                        <p class="text-sm text-gray-600 mt-1">5:45 - 10:15</p>
+                    </div>
+                    <div class="chapter-card p-4 bg-white border border-gray-200 rounded-lg hover:border-industrial-blue transition-colors cursor-pointer" onclick="seekToTime(615)">
+                        <div class="text-sm text-gray-500 mb-1">Chapter 4</div>
+                        <h4 class="font-semibold text-gray-900">Power & Testing</h4>
+                        <p class="text-sm text-gray-600 mt-1">10:15 - 15:00</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 分步指南 -->
+            <section class="step-by-step">
+                <h2>图文安装步骤</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>准备工作</h3>
+                            <ul>
+                                <li>确认安装位置（建议离地面1.5米以上）</li>
+                                <li>检查包装内所有配件是否齐全</li>
+                                <li>准备螺丝刀等工具</li>
+                                <li>确保电源插座可用</li>
+                            </ul>
+                            <div class="step-image">
+                                <div class="image-placeholder">📦 包装内容示意图</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>安装支架</h3>
+                            <ul>
+                                <li>使用水平仪确定支架位置</li>
+                                <li>标记螺丝孔位置</li>
+                                <li>钻孔并安装膨胀螺丝</li>
+                                <li>固定支架到墙面</li>
+                            </ul>
+                            <div class="step-image">
+                                <div class="image-placeholder">🔩 支架安装示意图</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>安装过滤器</h3>
+                            <ul>
+                                <li>将过滤器对准支架卡槽</li>
+                                <li>轻轻推入直到听到"咔哒"声</li>
+                                <li>检查是否安装牢固</li>
+                                <li>移除保护膜</li>
+                            </ul>
+                            <div class="step-image">
+                                <div class="image-placeholder">🔌 过滤器安装示意图</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Power & Testing</h3>
+                            <ul>
+                                <li>Connect power cable to 120V outlet</li>
+                                <li>Turn on main power switch</li>
+                                <li>Check LED status indicators</li>
+                                <li>Test all fan speed settings</li>
+                                <li id="smart-feature" class="hidden">Connect to WiFi and configure smart features via Ridgesun App</li>
+                            </ul>
+                            <div class="step-image">
+                                <div class="image-placeholder">💡 Power Testing Diagram</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 常见问题 -->
+            <section class="faq-section">
+                <h2>常见问题解答</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">安装后指示灯不亮怎么办？</button>
+                        <div class="faq-answer">
+                            <p>请检查：1) 电源是否接通 2) 电源线是否连接牢固 3) 插座是否有电。如果以上都正常，请联系技术支持。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">过滤器有异响怎么办？</button>
+                        <div class="faq-answer">
+                            <p>轻微的风声是正常的。如果有异常噪音：1) 检查是否有异物进入 2) 确保安装牢固 3) 联系客服获取帮助。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">多久需要更换滤网？</button>
+                        <div class="faq-answer">
+                            <p>建议每6-12个月更换一次滤网，具体取决于使用环境。当指示灯变红或风量明显减小时应及时更换。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">可以自己清洁滤网吗？</button>
+                        <div class="faq-answer">
+                            <p>不建议清洁滤网，因为可能会损坏过滤材料。请直接更换原装滤网以保证过滤效果。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 下载区域 -->
+            <section class="downloads-section">
+                <h2>相关下载</h2>
+                <div class="downloads-grid">
+                    <a href="/downloads/installation-manual.pdf" class="download-card">
+                        <div class="download-icon">📄</div>
+                        <h3>安装手册 PDF</h3>
+                        <p>详细图文安装指南</p>
+                        <span class="file-size">2.5 MB</span>
+                    </a>
+                    
+                    <a href="/downloads/safety-guide.pdf" class="download-card">
+                        <div class="download-icon">⚠️</div>
+                        <h3>安全指南</h3>
+                        <p>安全使用注意事项</p>
+                        <span class="file-size">1.2 MB</span>
+                    </a>
+                    
+                    <a href="/downloads/warranty-card.pdf" class="download-card">
+                        <div class="download-icon">📝</div>
+                        <h3>质保卡</h3>
+                        <p>产品质保信息</p>
+                        <span class="file-size">0.8 MB</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚（与首页相同） -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">RidgeSun</div>
+                    <p class="footer-tagline">专业空气净化解决方案</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>产品</h4>
+                        <a href="/products">空气过滤器</a>
+                        <a href="/filters">替换滤网</a>
+                        <a href="/accessories">配件</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>支持</h4>
+                        <a href="/installation">安装指南</a>
+                        <a href="/warranty">质保服务</a>
+                        <a href="/support">联系我们</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>公司</h4>
+                        <a href="/about">关于我们</a>
+                        <a href="/contact">联系方式</a>
+                        <a href="/privacy">隐私政策</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RidgeSun. 保留所有权利。</p>
+                <p>www.ridgesun.com | 使用Cloudflare部署</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+    <script>
+        // Model Selection
+        const model1000Btn = document.getElementById('model-1000');
+        const model1000ieBtn = document.getElementById('model-1000ie');
+        const modelDescription = document.getElementById('model-description');
+        const smartFeature = document.getElementById('smart-feature');
+        const videoPlaceholder = document.getElementById('video-placeholder');
+        const smartVideoPlaceholder = document.getElementById('smart-video-placeholder');
+        
+        const modelDescriptions = {
+            '1000': 'Standard industrial model with manual controls and basic filtration monitoring.',
+            '1000ie': 'Smart model with WiFi connectivity, mobile app control, and advanced air quality monitoring.'
+        };
+        
+        model1000Btn.addEventListener('click', function() {
+            setActiveModel('1000');
+        });
+        
+        model1000ieBtn.addEventListener('click', function() {
+            setActiveModel('1000ie');
+        });
+        
+        function setActiveModel(model) {
+            // Update buttons
+            document.querySelectorAll('.model-selector').forEach(btn => {
+                btn.classList.remove('active', 'bg-industrial-blue', 'text-white', 'border-industrial-blue');
+                btn.classList.add('border-gray-300', 'text-gray-700');
+            });
+            
+            const activeBtn = document.getElementById(`model-${model}`);
+            activeBtn.classList.add('active', 'bg-industrial-blue', 'text-white', 'border-industrial-blue');
+            activeBtn.classList.remove('border-gray-300', 'text-gray-700');
+            
+            // Update description
+            modelDescription.textContent = modelDescriptions[model];
+            
+            // Show/hide smart features
+            if (model === '1000ie') {
+                smartFeature.classList.remove('hidden');
+                videoPlaceholder.classList.add('hidden');
+                smartVideoPlaceholder.classList.remove('hidden');
+            } else {
+                smartFeature.classList.add('hidden');
+                videoPlaceholder.classList.remove('hidden');
+                smartVideoPlaceholder.classList.add('hidden');
+            }
+        }
+        
+        // Video Controls
+        let isPlaying = false;
+        
+        function playVideo() {
+            isPlaying = true;
+            document.getElementById('play-btn').classList.add('hidden');
+            document.getElementById('pause-btn').classList.remove('hidden');
+            // In production, this would start actual video playback
+            console.log('Playing standard installation video');
+        }
+        
+        function playSmartVideo() {
+            isPlaying = true;
+            document.getElementById('play-btn').classList.add('hidden');
+            document.getElementById('pause-btn').classList.remove('hidden');
+            // In production, this would start smart model video
+            console.log('Playing smart installation video');
+        }
+        
+        function pauseVideo() {
+            isPlaying = false;
+            document.getElementById('play-btn').classList.remove('hidden');
+            document.getElementById('pause-btn').classList.add('hidden');
+            console.log('Video paused');
+        }
+        
+        function toggleFullscreen() {
+            const container = document.querySelector('.video-player-section .bg-gray-900');
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        function changeVolume(value) {
+            console.log(`Volume changed to ${value}%`);
+        }
+        
+        function seekToTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            document.getElementById('current-time').textContent = 
+                `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            console.log(`Seeking to ${minutes}:${remainingSeconds.toString().padStart(2, '0')}`);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial model
+            setActiveModel('1000');
+            
+            // Update time display every second (simulated)
+            setInterval(() => {
+                if (isPlaying) {
+                    const current = document.getElementById('current-time');
+                    const [min, sec] = current.textContent.split(':').map(Number);
+                    let totalSeconds = min * 60 + sec + 1;
+                    if (totalSeconds >= 15 * 60) totalSeconds = 0;
+                    const newMin = Math.floor(totalSeconds / 60);
+                    const newSec = totalSeconds % 60;
+                    current.textContent = `${newMin}:${newSec.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

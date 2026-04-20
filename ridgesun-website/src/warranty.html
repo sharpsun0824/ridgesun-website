@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty Registration - Ridgesun PureRing</title>
+    <meta name="description" content="Register your Ridgesun PureRing warranty for 3-year coverage">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-blue': '#1e3a8a',
+                        'safety-red': '#dc2626',
+                        'industrial-gray': '#374151',
+                        'accent-orange': '#f97316',
+                        'success-green': '#10b981',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <style>
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .input-field {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .input-field:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+            outline: none;
+        }
+        
+        .input-field.error {
+            border-color: #dc2626;
+            background-color: #fef2f2;
+        }
+        
+        .warranty-badge {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .serial-highlight {
+            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 8px;
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 1px;
+        }
+        
+        .date-input::-webkit-calendar-picker-indicator {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>');
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-industrial-blue text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-industrial-blue font-bold text-xl">RS</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-blue-200 text-sm">Warranty Registration</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="warranty-badge">3-Year Warranty</div>
+                    <div class="text-sm text-blue-200">
+                        Made in USA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Progress Indicator -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto mb-2 bg-industrial-blue text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <span class="text-sm font-medium text-industrial-blue">Product Info</span>
+                    </div>
+                    <div class="flex-1 h-1 mx-4 bg-gray-200">
+                        <div class="progress-bar w-1/3"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto mb-2 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold">2</div>
+                        <span class="text-sm font-medium text-gray-500">Customer Details</span>
+                    </div>
+                    <div class="flex-1 h-1 mx-4 bg-gray-200">
+                        <div class="progress-bar w-0"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto mb-2 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold">3</div>
+                        <span class="text-sm font-medium text-gray-500">Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form-card p-8 mb-8 fade-in-up">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-industrial-gray mb-3">Warranty Registration</h2>
+                    <p class="text-gray-600">Register your Ridgesun PureRing to activate your 3-year limited warranty. All fields are required.</p>
+                </div>
+
+                <form id="warranty-form" class="space-y-8">
+                    <!-- Product Information Section -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <h3 class="text-xl font-bold text-industrial-gray mb-6">Product Information</h3>
+                        
+                        <!-- Serial Number (Auto-filled) -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">
+                                Serial Number
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <div class="serial-highlight p-4 mb-2">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="text-sm text-gray-500 mb-1">Detected from QR Code</div>
+                                        <div id="serial-display" class="text-xl font-bold text-industrial-blue font-mono">Loading serial number...</div>
+                                    </div>
+                                    <button type="button" onclick="editSerialNumber()" class="text-industrial-blue hover:text-blue-700 font-medium text-sm">
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="serial-input-container" class="hidden mt-4">
+                                <input type="text" 
+                                       id="serial-input" 
+                                       class="input-field w-full px-4 py-3"
+                                       placeholder="Enter 12-digit serial number (e.g., PR1000-2024-001)"
+                                       pattern="[A-Za-z0-9-]{10,20}"
+                                       maxlength="20">
+                                <p class="text-sm text-gray-500 mt-2">Find the serial number on the product label or packaging.</p>
+                            </div>
+                            <input type="hidden" id="serial-hidden" name="serial_number" required>
+                        </div>
+                        
+                        <!-- Purchase Date -->
+                        <div class="mb-6">
+                            <label for="purchase-date" class="block text-gray-700 font-medium mb-2">
+                                Purchase Date
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" 
+                                   id="purchase-date" 
+                                   name="purchase_date"
+                                   class="input-field w-full px-4 py-3 date-input"
+                                   required>
+                            <p class="text-sm text-gray-500 mt-2">Enter date in MM/DD/YYYY format. Warranty starts from purchase date.</p>
+                        </div>
+                        
+                        <!-- Amazon Order ID -->
+                        <div>
+                            <label for="order-id" class="block text-gray-700 font-medium mb-2">
+                                Amazon Order ID
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                   id="order-id" 
+                                   name="order_id"
+                                   class="input-field w-full px-4 py-3"
+                                   placeholder="e.g., 123-4567890-1234567"
+                                   pattern="[0-9-]{10,20}"
+                                   maxlength="20"
+                                   required>
+                            <p class="text-sm text-gray-500 mt-2">Find this in your Amazon order confirmation email.</p>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information Section -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <h3 class="text-xl font-bold text-industrial-gray mb-6">Customer Information</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- First Name -->
+                            <div>
+                                <label for="first-name" class="block text-gray-700 font-medium mb-2">
+                                    First Name
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                       id="first-name" 
+                                       name="first_name"
+                                       class="input-field w-full px-4 py-3"
+                                       placeholder="John"
+                                       required>
+                            </div>
+                            
+                            <!-- Last Name -->
+                            <div>
+                                <label for="last-name" class="block text-gray-700 font-medium mb-2">
+                                    Last Name
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                       id="last-name" 
+                                       name="last_name"
+                                       class="input-field w-full px-4 py-3"
+                                       placeholder="Doe"
+                                       required>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="mt-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">
+                                Email Address
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email"
+                                   class="input-field w-full px-4 py-3"
+                                   placeholder="john.doe@example.com"
+                                   required>
+                            <p class="text-sm text-gray-500 mt-2">Warranty confirmation will be sent to this email.</p>
+                        </div>
+                        
+                        <!-- Phone (Optional) -->
+                        <div class="mt-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">
+                                Phone Number <span class="text-gray-500">(Optional)</span>
+                            </label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone"
+                                   class="input-field w-full px-4 py-3"
+                                   placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="mb-8">
+                        <div class="flex items-start">
+                            <input type="checkbox" 
+                                   id="terms" 
+                                   name="terms"
+                                   class="mt-1 mr-3 w-5 h-5 text-industrial-blue rounded focus:ring-industrial-blue"
+                                   required>
+                            <label for="terms" class="text-gray-700">
+                                I agree to the <a href="/terms" class="text-industrial-blue hover:underline font-medium">Terms & Conditions</a> and <a href="/privacy" class="text-industrial-blue hover:underline font-medium">Privacy Policy</a>. I confirm that the information provided is accurate and I am the original purchaser of this product.
+                                <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-gray-200">
+                        <a href="/go" class="text-industrial-blue hover:text-blue-700 font-medium mb-4 sm:mb-0">
+                            ← Back to Support Hub
+                        </a>
+                        <button type="submit" 
+                                class="px-8 py-3 bg-industrial-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-industrial-blue focus:ring-offset-2">
+                            Register Warranty
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Warranty Benefits -->
+            <div class="form-card p-8">
+                <h3 class="text-xl font-bold text-industrial-gray mb-6">Warranty Benefits</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🛡️</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">3-Year Coverage</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive protection for parts and labor</p>
+                    </div>
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🚚</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Fast Service</h4>
+                        <p class="text-gray-600 text-sm">Priority support and expedited parts shipping</p>
+                    </div>
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="w-12 h-12 mx-auto mb-4 bg-industrial-blue text-white rounded-full flex items-center justify-center">
+                            <span class="text-2xl">📧</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Email Updates</h4>
+                        <p class="text-gray-600 text-sm">Maintenance reminders and product updates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal (Hidden by default) -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+            <div class="success-checkmark mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Registration Successful!</h3>
+            <p class="text-gray-600 mb-6">Your Ridgesun PureRing warranty has been activated. Confirmation email sent to <span id="confirm-email" class="font-semibold"></span>.</p>
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                <div class="font-mono text-sm text-gray-700">Warranty ID: <span id="warranty-id" class="font-bold">RS-2024-001234</span></div>
+                <div class="text-sm text-gray-600 mt-1">Valid until: <span id="warranty-expiry" class="font-semibold">04/19/2027</span></div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="closeSuccessModal()" class="px-6 py-3 bg-industrial-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                    Return to Support Hub
+                </button>
+                <button onclick="printConfirmation()" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
+                    Print Confirmation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-gray text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Get serial number from localStorage
+        function loadSerialNumber() {
+            const serial = localStorage.getItem('ridgesun_serial');
+            const serialDisplay = document.getElementById('serial-display');
+            const serialHidden = document.getElementById('serial-hidden');
+            
+            if (serial) {
+                serialDisplay.textContent = serial;
+                serialHidden.value = serial;
+            } else {
+                serialDisplay.textContent = 'No serial number detected';
+                // Show input field if no serial
+                editSerialNumber();
+            }
+        }
+        
+        // Edit serial number
+        function editSerialNumber() {
+            const container = document.getElementById('serial-input-container');
+            const input = document.getElementById('serial-input');
+            const hidden = document.getElementById('serial-hidden');
+            const display = document.getElementById('serial-display');
+            
+            container.classList.toggle('hidden');
+            
+            if (!container.classList.contains('hidden')) {
+                input.focus();
+                // Pre-fill with current value
+                input.value = hidden.value || '';
+            } else {
+                // Update from input
+                if (input.value.trim()) {
+                    hidden.value = input.value.trim();
+                    display.textContent = input.value.trim();
+                    // Save to localStorage
+                    localStorage.setItem('ridgesun_serial', input.value.trim());
+                }
+            }
+        }
+        
+        // Form validation and submission
+        document.getElementById('warranty-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            let isValid = true;
+            const inputs = this.querySelectorAll('input[required]');
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+            
+            // Validate email format
+            const emailInput = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value && !emailRegex.test(emailInput.value)) {
+                emailInput.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate serial number
+            const serial = document.getElementById('serial-hidden').value;
+            if (!serial || serial.length < 10) {
+                alert('Please enter a valid serial number');
+                editSerialNumber();
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                simulateSubmission();
+            }
+        });
+        
+        // Simulate form submission (in production, this would be a real API call)
+        function simulateSubmission() {
+            // Show loading state
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate API delay
+            setTimeout(() => {
+                // Show success modal
+                const modal = document.getElementById('success-modal');
+                const email = document.getElementById('email').value;
+                document.getElementById('confirm-email').textContent = email;
+                
+                // Generate warranty expiry (3 years from purchase date)
+                const purchaseDate = new Date(document.getElementById('purchase-date').value);
+                const expiryDate = new Date(purchaseDate);
+                expiryDate.setFullYear(expiryDate.getFullYear() + 3);
+                
+                const formattedExpiry = (expiryDate.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                                       expiryDate.getDate().toString().padStart(2, '0') + '/' + 
+                                       expiryDate.getFullYear();
+                
+                document.getElementById('warranty-expiry').textContent = formattedExpiry;
+                
+                // Generate random warranty ID
+                const warrantyId = 'RS-' + new Date().getFullYear() + '-' + 
+                                 Math.floor(100000 + Math.random() * 900000);
+                document.getElementById('warranty-id').textContent = warrantyId;
+                
+                modal.classList.remove('hidden');
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // In production: Send data to backend
+                const formData = new FormData(document.getElementById('warranty-form'));
+                const data = Object.fromEntries(formData);
+                console.log('Warranty registration submitted:', data);
+                
+                // Store in localStorage for demo purposes
+                localStorage.setItem('ridgesun_warranty', JSON.stringify({
+                    ...data,
+                    warranty_id: warrantyId,
+                    expiry_date: formattedExpiry,
+                    registered_at: new Date().toISOString()
+                }));
+                
+            }, 1500);
+        }
+        
+        // Close success modal
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            window.location.href = '/go';
+        }
+        
+        // Print confirmation
+        function printConfirmation() {
+            const printContent = `
+                <div style="padding: 40px; font-family: Arial, sans-serif;">
+                    <h1 style="color: #1e3a8a; margin-bottom: 30px;">Ridgesun Warranty Confirmation</h1>
+                    <div style="margin-bottom: 20px;">
+                        <strong>Warranty ID:</strong> ${document.getElementById('warranty-id').textContent}<br>
+                        <strong>Valid Until:</strong> ${document.getElementById('warranty-expiry').textContent}<br>
+                        <strong>Customer Email:</strong> ${document.getElementById('confirm-email').textContent}
+                    </div>
+                    <p>Thank you for registering your Ridgesun PureRing warranty.</p>
+                    <p style="margin-top: 40px; font-size: 12px; color: #666;">
+                        Ridgesun Industries • Made in USA • ISO 9001 Certified
+                    </p>
+                </div>
+            `;
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write('<html><head><title>Warranty Confirmation</title></head><body>');
+            printWindow.document.write(printContent);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+        
+        // Initialize date input with today's date
+        function initializeDateInput() {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            document.getElementById('purchase-date').value = formattedDate;
+            
+            // Set min date to 1 year ago, max date to today
+            const oneYearAgo = new Date();
+            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+            document.getElementById('purchase-date').min = oneYearAgo.toISOString().split('T')[0];
+            document.getElementById('purchase-date').max = formattedDate;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSerialNumber();
+            initializeDateInput();
+            
+            // Real-time validation
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', function() {
+                    this.classList.remove('error');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

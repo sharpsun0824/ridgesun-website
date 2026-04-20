@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genuine Filters - Ridgesun PureRing</title>
+    <meta name="description" content="Purchase genuine HEPA H13 and MERV 11 replacement filters for Ridgesun PureRing">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-blue': '#1e3a8a',
+                        'safety-red': '#dc2626',
+                        'industrial-gray': '#374151',
+                        'accent-orange': '#f97316',
+                        'amazon-orange': '#ff9900',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <style>
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+        
+        .spec-badge {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .amazon-button {
+            background: linear-gradient(135deg, #ff9900 0%, #ffac31 100%);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .amazon-button:hover {
+            background: linear-gradient(135deg, #e68a00 0%, #ff9900 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 153, 0, 0.3);
+        }
+        
+        .compatibility-chip {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .filter-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        
+        .hepa-icon {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+        }
+        
+        .merv-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+            color: white;
+        }
+        
+        .price-tag {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        
+        .savings-badge {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        .comparison-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-industrial-blue text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <a href="/go" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-industrial-blue font-bold text-xl">RS</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
+                            <p class="text-blue-200 text-sm">Genuine Replacement Filters</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                        </svg>
+                        <span class="text-sm">Ships from USA</span>
+                    </div>
+                    <div class="text-sm text-blue-200">
+                        <span class="font-mono">Amazon Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-industrial-gray mb-4">Genuine Replacement Filters</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Maintain peak performance with official Ridgesun filters. Engineered for PureRing 1000 & 1000ie systems.
+            </p>
+            
+            <!-- Compatibility Alert -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-900">Compatibility Guaranteed</h3>
+                </div>
+                <p class="text-blue-800 mb-4">These filters are specifically designed for Ridgesun PureRing systems. Using non-genuine filters may void your warranty.</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="compatibility-chip">PureRing 1000</span>
+                    <span class="compatibility-chip">PureRing 1000ie</span>
+                    <span class="compatibility-chip">All production years</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <!-- HEPA H13 Filter -->
+            <div class="product-card p-8">
+                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="filter-icon hepa-icon mb-4">
+                            🌬️
+                        </div>
+                        <div class="spec-badge">HEPA H13</div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">HEPA H13 Filter</h3>
+                                <p class="text-gray-600">Medical-grade filtration efficiency</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="price-tag">$89.99</div>
+                                <div class="savings-badge mt-2">Save 15%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-900 mb-3">Specifications:</h4>
+                            <ul class="feature-list text-gray-700">
+                                <li>99.97% efficiency at 0.3 microns</li>
+                                <li>Medical-grade H13 classification</li>
+                                <li>6-month recommended replacement</li>
+                                <li>FDA-compliant materials</li>
+                                <li>Low airflow resistance design</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-900 mb-2">Best For:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Allergies</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Asthma</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Hospitals</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Labs</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Amazon Button -->
+                        <a href="https://www.amazon.com/dp/B0CUSTOMHEPA" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="amazon-button w-full py-4 px-6 text-lg block text-center">
+                            <div class="flex items-center justify-center">
+                                <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10.5 15.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S12.83 14 12 14s-1.5.67-1.5 1.5zM12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                                </svg>
+                                Buy on Amazon
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </div>
+                            <div class="text-sm mt-2 opacity-90">Prime eligible • Free shipping</div>
+                        </a>
+                        
+                        <div class="mt-4 text-center text-sm text-gray-500">
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                2,450+ verified purchases
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MERV 11 Pre-Filter -->
+            <div class="product-card p-8">
+                <div class="flex flex-col md:flex-row md:items-start gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="filter-icon merv-icon mb-4">
+                            ⚡
+                        </div>
+                        <div class="spec-badge">MERV 11</div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">MERV 11 Pre-Filter</h3>
+                                <p class="text-gray-600">Extended HEPA filter life</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="price-tag">$34.99</div>
+                                <div class="savings-badge mt-2">Save 20%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-900 mb-3">Specifications:</h4>
+                            <ul class="feature-list text-gray-700">
+                                <li>85% efficiency at 3-10 microns</li>
+                                <li>Extends HEPA filter life 2x</li>
+                                <li>3-month recommended replacement</li>
+                                <li>Washable option available</li>
+                                <li>Low static pressure drop</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-900 mb-2">Best For:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Dust</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Pollen</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Pet dander</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Workshops</span>
+                            </div>
+                        </div>
+                        <!-- Amazon Button -->
+                        <a href="https://www.amazon.com/dp/B0CUSTOMMERV" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="amazon-button w-full py-4 px-6 text-lg block text-center">
+                            <div class="flex items-center justify-center">
+                                <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10.5 15.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S12.83 14 12 14s-1.5.67-1.5 1.5zM12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                                </svg>
+                                Buy on Amazon
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </div>
+                            <div class="text-sm mt-2 opacity-90">Prime eligible • Free shipping</div>
+                        </a>
+                        
+                        <div class="mt-4 text-center text-sm text-gray-500">
+                            <span class="inline-flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                1,890+ verified purchases
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bundle Offer -->
+        <div class="product-card p-8 mb-16">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full text-sm font-bold mb-4">
+                    ⭐ MOST POPULAR
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Maintenance Bundle</h2>
+                <p class="text-gray-600 text-lg">Save 25% when you buy both filters together</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-industrial-blue mb-2">$109.99</div>
+                    <div class="text-lg text-gray-600 mb-4">Bundle Price</div>
+                    <div class="text-sm text-gray-500 line-through">Regular: $124.98</div>
+                    <div class="text-green-600 font-bold">Save $14.99</div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-3">Bundle Includes:</h4>
+                    <ul class="feature-list text-gray-700 mb-4">
+                        <li>1 HEPA H13 Filter (6-month supply)</li>
+                        <li>2 MERV 11 Pre-Filters (6-month supply)</li>
+                        <li>Free installation gloves</li>
+                        <li>Maintenance schedule guide</li>
+                    </ul>
+                    <a href="https://www.amazon.com/dp/B0CUSTOMBUNDLE" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="amazon-button w-full py-4 px-6 text-lg block text-center">
+                        <div class="flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10.5 15.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S12.83 14 12 14s-1.5.67-1.5 1.5zM12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                            </svg>
+                            Buy Bundle on Amazon
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                        <div class="text-sm mt-2 opacity-90">Best value • Free 2-day shipping</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-industrial-gray mb-8 text-center">Filter Comparison</h2>
+            <div class="overflow-x-auto">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>HEPA H13</th>
+                            <th>MERV 11</th>
+                            <th>Bundle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-medium">Filtration Efficiency</td>
+                            <td>99.97% @ 0.3µm</td>
+                            <td>85% @ 3-10µm</td>
+                            <td>Both</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Replacement Interval</td>
+                            <td>6 months</td>
+                            <td>3 months</td>
+                            <td>6-month kit</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Best For</td>
+                            <td>Viruses, bacteria</td>
+                            <td>Dust, pollen, dander</td>
+                            <td>Complete protection</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Airflow Resistance</td>
+                            <td>Medium</td>
+                            <td>Low</td>
+                            <td>Optimized</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Warranty Impact</td>
+                            <td>Required</td>
+                            <td>Recommended</td>
+                            <td>Full coverage</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Price</td>
+                            <td>$89.99</td>
+                            <td>$34.99</td>
+                            <td>$109.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-industrial-gray mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-gray-900 mb-3">How often should I replace filters?</h4>
+                    <p class="text-gray-600">HEPA H13: Every 6 months. MERV 11: Every 3 months. In high-dust environments, replace more frequently.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-gray-900 mb-3">Will Amazon ship internationally?</h4>
+                    <p class="text-gray-600">Yes, these filters are available for international shipping through Amazon Global.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-gray-900 mb-3">Are these filters washable?</h4>
+                    <p class="text-gray-600">MERV 11 filters have a washable option. HEPA H13 filters are not washable and must be replaced.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-gray-900 mb-3">What if I use non-genuine filters?</h4>
+                    <p class="text-gray-600">Using non-genuine filters may void your warranty and reduce system performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support CTA -->
+        <div class="text-center">
+            <div class="bg-gradient-to-r from-industrial-blue to-blue-600 rounded-2xl p-8 text-white">
+                <h3 class="text-2xl font-bold mb-4">Need Help Choosing?</h3>
+                <p class="text-blue-100 mb-6 max-w-2xl mx-auto">Our technical support team can help you select the right filters for your environment and usage patterns.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:support@ridgesun.com" 
+                       class="px-6 py-3 bg-white text-industrial-blue font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                        Email Support
+                    </a>
+                    <a href="/go" 
+                       class="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+                        Back to Support Hub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-gray text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified | Amazon is a trademark of Amazon.com, Inc.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Track Amazon link clicks
+        document.querySelectorAll('a[href*="amazon"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // In production, this would send to analytics
+                console.log('Amazon link clicked:', this.href);
+                
+                // Optional: Open in new tab with tracking parameters
+                // const trackingUrl = this.href + '?tag=ridgesun-20';
+                // window.open(trackingUrl, '_blank');
+                // e.preventDefault();
+            });
+        });
+        
+        // Add to cart simulation (for demo purposes)
+        document.querySelectorAll('.amazon-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add visual feedback
+                const originalText = this.innerHTML;
+                this.innerHTML = `
+                    <div class="flex items-center justify-center">
+                        <svg class="w-6 h-6 mr-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                        Redirecting to Amazon...
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 1500);
+            });
+        });
+        
+        // Initialize serial number display if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const serial = localStorage.getItem('ridgesun_serial');
+            if (serial) {
+                // Could display serial number in a subtle way
+                console.log('Customer serial:', serial);
+            }
+            
+            // Update prices based on location (demo)
+            updatePricesForRegion('US');
+        });
+        
+        // Demo function for regional pricing
+        function updatePricesForRegion(region) {
+            const prices = {
+                'US': { hepa: '$89.99', merv: '$34.99', bundle: '$109.99' },
+                'CA': { hepa: '$119.99', merv: '$44.99', bundle: '$139.99' },
+                'EU': { hepa: '€79.99', merv: '€29.99', bundle: '€99.99' }
+            };
+            
+            const regionPrices = prices[region] || prices['US'];
+            
+            // Update price displays
+            document.querySelectorAll('.price-tag').forEach((el, index) => {
+                if (index === 0) el.textContent = regionPrices.hepa;
+                if (index === 1) el.textContent = regionPrices.merv;
+                if (index === 2) el.textContent = regionPrices.bundle;
+            });
+        }
+    </script>
+</body>
+</html>

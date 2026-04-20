@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridgesun PureRing Support Hub</title>
+    <meta name="description" content="Industrial air filtration support hub for Ridgesun PureRing 1000 & 1000ie customers">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-blue': '#1e3a8a',
+                        'safety-red': '#dc2626',
+                        'industrial-gray': '#374151',
+                        'accent-orange': '#f97316',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <style>
+        .industrial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industrial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #f97316 100%);
+        }
+        
+        .industrial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #1e3a8a;
+        }
+        
+        .qr-scanner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px dashed #475569;
+        }
+        
+        .serial-badge {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: 1px;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Mobile-first optimizations */
+        @media (max-width: 640px) {
+            .mobile-full-height {
+                min-height: calc(100vh - 80px);
+            }
+            
+            .mobile-tap-target {
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-industrial-blue text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-industrial-blue font-bold text-xl">RS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">Ridgesun PureRing</h1>
+                        <p class="text-blue-200 text-sm">Industrial Air Filtration Support</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div id="serial-display" class="serial-badge px-4 py-2 rounded-lg text-sm font-mono hidden">
+                        SN: <span id="serial-number">Loading...</span>
+                    </div>
+                    <div class="text-sm text-blue-200">
+                        <span id="current-date" class="font-mono"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 mobile-full-height">
+        <!-- QR Scanner Simulation -->
+        <div class="mb-12">
+            <div class="qr-scanner rounded-2xl p-8 text-center mb-6">
+                <div class="inline-block p-4 bg-white/10 rounded-xl mb-4">
+                    <div class="text-5xl mb-2">📱</div>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2">QR Code Detected</h2>
+                <p class="text-blue-200 mb-4">Welcome to Ridgesun PureRing Support Hub</p>
+                <div class="inline-flex items-center space-x-2 bg-black/30 px-4 py-2 rounded-lg">
+                    <span class="text-green-400">✓</span>
+                    <code class="text-white font-mono text-sm">ridgesun.com/go?sn=</code>
+                    <span id="url-serial" class="text-accent-orange font-bold"></span>
+                </div>
+            </div>
+            
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-industrial-gray mb-2">Quick Access Hub</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Select an option below to access support resources for your PureRing 1000 or 1000ie unit</p>
+            </div>
+        </div>
+
+        <!-- Action Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Setup Video Card -->
+            <a href="/installation" class="industrial-card rounded-xl p-8 text-center block">
+                <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl">🎥</span>
+                </div>
+                <h3 class="text-xl font-bold text-industrial-gray mb-3">Watch Setup Video</h3>
+                <p class="text-gray-600 mb-4">Step-by-step installation guide with safety instructions</p>
+                <div class="inline-flex items-center text-industrial-blue font-semibold">
+                    <span>View Guide</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                    <span class="inline-flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Includes safety alerts
+                    </span>
+                </div>
+            </a>
+
+            <!-- Warranty Registration Card -->
+            <a href="/warranty" class="industrial-card rounded-xl p-8 text-center block">
+                <div class="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl">📝</span>
+                </div>
+                <h3 class="text-xl font-bold text-industrial-gray mb-3">Register Warranty</h3>
+                <p class="text-gray-600 mb-4">Activate your 3-year warranty coverage online</p>
+                <div class="inline-flex items-center text-industrial-blue font-semibold">
+                    <span>Register Now</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                    <span class="inline-flex items-center">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Serial auto-filled
+                    </span>
+                </div>
+            </a>
+
+            <!-- Buy Filters Card -->
+            <a href="/shop" class="industrial-card rounded-xl p-8 text-center block">
+                <div class="w-20 h-20 mx-auto mb-6 bg-orange-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl">🛒</span>
+                </div>
+                <h3 class="text-xl font-bold text-industrial-gray mb-3">Buy Filters (Amazon)</h3>
+                <p class="text-gray-600 mb-4">Purchase genuine HEPA H13 & MERV 11 replacement filters</p>
+                <div class="inline-flex items-center text-industrial-blue font-semibold">
+                    <span>Shop Now</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                    <span class="inline-flex items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="w-4 h-4 mr-2" alt="Amazon">
+                        US Storefront
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 class="text-lg font-bold text-industrial-gray mb-4">Additional Resources</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="#" class="flex items-center p-4 hover:bg-gray-50 rounded-lg">
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-xl">📄</span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Technical Manual</h4>
+                        <p class="text-sm text-gray-600">Complete product specifications</p>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center p-4 hover:bg-gray-50 rounded-lg">
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-xl">🛠️</span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Maintenance Schedule</h4>
+                        <p class="text-sm text-gray-600">Filter replacement intervals</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-gray text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-8 h-8 bg-accent-orange rounded flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Ridgesun</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Industrial Air Filtration Systems</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">© 2024 Ridgesun Industries. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs">Made in USA | ISO 9001 Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Capture serial number from URL
+        function getSerialFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serial = urlParams.get('sn');
+            
+            if (serial) {
+                // Save to localStorage
+                localStorage.setItem('ridgesun_serial', serial);
+                
+                // Display serial number
+                document.getElementById('serial-number').textContent = serial;
+                document.getElementById('url-serial').textContent = serial;
+                document.getElementById('serial-display').classList.remove('hidden');
+                
+                return serial;
+            }
+            
+            // Check localStorage for existing serial
+            const storedSerial = localStorage.getItem('ridgesun_serial');
+            if (storedSerial) {
+                document.getElementById('serial-number').textContent = storedSerial;
+                document.getElementById('serial-display').classList.remove('hidden');
+                return storedSerial;
+            }
+            
+            return null;
+        }
+        
+        // Set current date
+        function setCurrentDate() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'America/New_York'
+            };
+            document.getElementById('current-date').textContent = 
+                now.toLocaleDateString('en-US', options);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            getSerialFromURL();
+            setCurrentDate();
+            
+            // Update date every minute
+            setInterval(setCurrentDate, 60000);
+            
+            // Add click animations to cards
+            document.querySelectorAll('.industrial-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Add visual feedback
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+        
+        // Service Worker registration for PWA (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(error) {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
