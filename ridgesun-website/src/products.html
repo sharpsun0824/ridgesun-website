@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Ridgesun PureRing</title>
+    <link rel="stylesheet" href="styles/industrial-design.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    <style>
+        .redirect-notice {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .redirect-link {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+        
+        .redirect-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="industrial-bg">
+    <div class="industrial-container">
+        <div class="redirect-notice">
+            <h1 class="industrial-h1" style="color: white;">Products Page</h1>
+            <p class="industrial-p" style="color: rgba(255,255,255,0.9);">
+                You are being redirected to the PureRing 1000 Series product page.
+            </p>
+            <a href="products-1000-series.html" class="redirect-link">
+                View PureRing 1000 Series →
+            </a>
+        </div>
+        
+        <script>
+            // 自动重定向到实际的产品页面
+            setTimeout(function() {
+                window.location.href = 'products-1000-series.html';
+            }, 3000);
+        </script>
+    </div>
+</body>
+</html>

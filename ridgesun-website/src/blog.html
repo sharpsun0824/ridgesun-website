@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Resources | Ridgesun PureRing</title>
+    <link rel="stylesheet" href="styles/industrial-design.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    <style>
+        .blog-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #64748b;
+        }
+        
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="industrial-bg">
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1 class="industrial-h1">Blog & Resources</h1>
+            <p class="industrial-p" style="color: #64748b; max-width: 600px; margin: 0 auto;">
+                Industry insights, technical guides, and updates from Ridgesun PureRing.
+            </p>
+        </div>
+        
+        <div class="coming-soon">
+            <div class="coming-soon-icon">📝</div>
+            <h2 class="industrial-h2">Coming Soon</h2>
+            <p class="industrial-p" style="max-width: 500px; margin: 1rem auto;">
+                Our blog is currently under development. Check back soon for articles on industrial air filtration, maintenance tips, and industry news.
+            </p>
+            <p class="industrial-p">
+                In the meantime, visit our <a href="support-center.html" style="color: #2563eb; text-decoration: underline;">Support Center</a> for technical resources.
+            </p>
+        </div>
+        
+        <!-- Placeholder for future blog posts -->
+        <div class="blog-grid" style="display: none;">
+            <div class="blog-card">
+                <div class="blog-image">🏭</div>
+                <div class="blog-content">
+                    <span class="blog-category">Technical Guide</span>
+                    <h3 class="industrial-h3">Optimizing Airflow in Industrial Spaces</h3>
+                    <p class="industrial-p" style="color: #64748b; font-size: 0.875rem;">
+                        Learn how to maximize efficiency with proper air filtration system placement and maintenance.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">🔧</div>
+                <div class="blog-content">
+                    <span class="blog-category">Maintenance</span>
+                    <h3 class="industrial-h3">Filter Replacement Best Practices</h3>
+                    <p class="industrial-p" style="color: #64748b; font-size: 0.875rem;">
+                        A comprehensive guide to maintaining optimal filtration performance through proper filter care.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">📊</div>
+                <div class="blog-content">
+                    <span class="blog-category">Industry News</span>
+                    <h3 class="industrial-h3">2024 Air Quality Regulations Update</h3>
+                    <p class="industrial-p" style="color: #64748b; font-size: 0.875rem;">
+                        Stay compliant with the latest changes in industrial air quality standards and requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

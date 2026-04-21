@@ -2,88 +2,64 @@
 
 Professional industrial air filtration system website for Ridgesun PureRing products.
 
-## 🏭 Project Overview
+## 🚀 Quick Deployment to Cloudflare Pages
 
-This is a complete website redesign for Ridgesun PureRing industrial air filtration systems, featuring:
+1. **Go to Cloudflare Dashboard** → Pages → Create project
+2. **Connect to Git** → Select this repository
+3. **Configure build settings**:
+   - Build command: (leave empty)
+   - Build output directory: `ridgesun-website/src`
+4. **Click "Save and Deploy"**
 
-- **Mobile-first design** with optimized QR landing pages
-- **Industrial design system** with professional aesthetics
-- **Technical product showcases** with detailed specifications
-- **Comprehensive support center** to reduce after-sales pressure
-
-## 📁 Repository Structure
+## 📁 Website Structure
 
 ```
-ridgesun-website/
-├── src/
-│   ├── go-new.html              # Mobile QR landing page (primary entry point)
-│   ├── index-homepage.html      # Brand homepage with engineering excellence showcase
-│   ├── products-1000-series.html # Product comparison page (PureRing 1000 series)
-│   ├── support-center.html      # Comprehensive support center
-│   ├── scripts/
-│   │   └── main.js              # Main JavaScript functionality
-│   └── styles/
-│       └── industrial-design.css # Industrial design system CSS
-├── tailwind.config.js           # Tailwind CSS configuration
-└── *.md                         # Documentation files
+ridgesun-website/src/
+├── index.html              # Homepage
+├── go.html                # QR landing page
+├── products.html          # Products overview (redirects to 1000 series)
+├── products-1000-series.html # PureRing 1000 series details
+├── support.html           # Support overview (redirects to support center)
+├── support-center.html    # Full support center
+├── contact.html           # Contact information
+├── blog.html              # Blog & resources
+├── about.html             # About us
+├── 404.html              # Error page
+├── styles/
+│   └── industrial-design.css # Design system
+└── scripts/
+    └── main.js           # JavaScript functionality
 ```
 
-## 🎨 Design System
+## 🌐 URL Routes
 
-### Key Features
-- **Industrial Color Palette**: Deep blues, grays, and safety colors
-- **Mobile-First Approach**: Touch-optimized interfaces (≥44×44px touch targets)
-- **Performance Optimized**: Fast loading (<2s on mobile)
-- **Accessibility Compliant**: WCAG 2.1 AA standards
-- **Responsive Design**: Works on all devices from mobile to desktop
+- `/` → `index.html` (Homepage)
+- `/go` → `go.html` (QR landing page)
+- `/products` → `products.html` → `products-1000-series.html`
+- `/support` → `support.html` → `support-center.html`
+- `/contact` → `contact.html`
+- `/blog` → `blog.html`
+- `/about` → `about.html`
+- Any other route → `404.html`
 
-### Core Pages
-1. **QR Landing Page (`/go`)**: Simplified mobile-first page for QR code scanning
-2. **Brand Homepage**: Showcases 20+ years of engineering excellence
-3. **Product Pages**: Detailed technical specifications and comparisons
-4. **Support Center**: Self-service portal to reduce support requests
+## 🎯 Core Features
 
-## 🚀 Deployment
-
-The website is designed for deployment on **Cloudflare Pages**:
-
-1. Connect this repository to Cloudflare Pages
-2. Set build command: (none - static HTML)
-3. Set output directory: `ridgesun-website/src/`
-4. Deploy!
-
-## 📚 Documentation
-
-- `NEW_DESIGN_SUMMARY.md` - Complete design overview and implementation details
-- `DESIGN_DELIVERY_SUMMARY.md` - Project delivery summary
-- `DESIGN_DECISIONS.md` - Key design decisions and rationale
-- `DEPLOYMENT_CHECKLIST.md` - Step-by-step deployment guide
-- `MOBILE_TEST_REPORT.md` - Mobile compatibility test results
-- `WEBSITE_PLAN.md` - Overall development plan
-- `cloudflare-config.md` - Cloudflare Pages configuration guide
-
-## 🛠️ Technology Stack
-
-- **HTML5**: Semantic markup with ARIA attributes
-- **Tailwind CSS**: Utility-first CSS framework
-- **Vanilla JavaScript**: Lightweight interactivity
-- **Cloudflare Pages**: Global CDN hosting
+- **Mobile-first design** with QR-optimized landing page
+- **Industrial design system** for professional appearance
+- **Complete product showcase** with technical specifications
+- **Comprehensive support center** to reduce customer service load
+- **Responsive design** works on all devices
 
 ## 📱 Mobile Optimization
 
-- Touch-friendly interfaces (≥44×44px targets)
-- Fast loading (<2s on 3G)
-- Simplified navigation for QR landing pages
-- Responsive images and layouts
+- Touch-friendly buttons (≥44×44px)
+- Fast loading performance
+- Simplified navigation for mobile users
+- QR code scanning optimized interface
 
-## 🔧 Development
+## 🔧 Local Development
 
-To work with this project locally:
-
-1. Clone the repository
-2. Open HTML files in a browser
-3. For CSS changes, edit `industrial-design.css`
-4. For configuration changes, edit `tailwind.config.js`
+Simply open any HTML file in your browser. No build process required.
 
 ## 📄 License
 

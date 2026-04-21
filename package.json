@@ -1,0 +1,11 @@
+{
+  "name": "ridgesun-website",
+  "version": "1.0.0",
+  "description": "Ridgesun PureRing industrial air filtration website",
+  "scripts": {
+    "dev": "echo 'Open index.html in browser'"
+  },
+  "keywords": ["industrial", "air-filtration", "static-site"],
+  "author": "Ridgesun",
+  "license": "Proprietary"
+}

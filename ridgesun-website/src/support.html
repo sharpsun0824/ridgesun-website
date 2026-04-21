@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Ridgesun PureRing</title>
+    <link rel="stylesheet" href="styles/industrial-design.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    <style>
+        .redirect-notice {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .redirect-link {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+        
+        .redirect-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="industrial-bg">
+    <div class="industrial-container">
+        <div class="redirect-notice">
+            <h1 class="industrial-h1" style="color: white;">Support Center</h1>
+            <p class="industrial-p" style="color: rgba(255,255,255,0.9);">
+                You are being redirected to the full Support Center.
+            </p>
+            <a href="support-center.html" class="redirect-link">
+                Go to Support Center →
+            </a>
+        </div>
+        
+        <script>
+            // 自动重定向到实际的支持中心页面
+            setTimeout(function() {
+                window.location.href = 'support-center.html';
+            }, 3000);
+        </script>
+    </div>
+</body>
+</html>
