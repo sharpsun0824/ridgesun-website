@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureRing Support Center | Manuals, Tips, and Technical Support</title>
+    <meta name="description" content="Get help with your PureRing air scrubber. Register warranty, watch installation videos, download manuals, get technical support.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial': {
+                            '50': '#f8fafc',
+                            '100': '#f1f5f9',
+                            '900': '#0f172a',
+                        },
+                        'tech': {
+                            '600': '#2563eb',
+                            '500': '#3b82f6',
+                        },
+                        'support': {
+                            'green': '#059669',
+                            'yellow': '#f59e0b',
+                            'red': '#dc2626',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'SF Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        /* Support Design System */
+        :root {
+            --support-green: #059669;
+            --support-yellow: #f59e0b;
+            --support-red: #dc2626;
+        }
+        
+        /* Search Box */
+        .support-search {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem 1.5rem;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        
+        .support-search:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Support Card */
+        .support-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+            border-color: #2563eb;
+        }
+        
+        /* IKEA-style Instructions */
+        .ikea-instruction {
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .ikea-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ikea-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* SN Code Visualization */
+        .sn-visualization {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sn-visualization::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            animation: scan 2s ease-in-out infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Filter Replacement Schedule */
+        .filter-schedule {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #86efac;
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #bbf7d0;
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .support-card {
+                padding: 1.25rem;
+            }
+            
+            .ikea-instruction {
+                padding: 1rem;
+            }
+        }
+        
+        /* Accessibility */
+        :focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="font-display bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">R</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-gray-900">Ridgesun</span>
+                            <span class="text-blue-600 font-semibold">PureRing</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="/products" class="text-gray-700 hover:text-blue-600 font-medium">Products</a>
+                    <a href="/support" class="text-blue-600 font-medium border-b-2 border-blue-600 pb-1">Support</a>
+                    <a href="/blog" class="text-gray-700 hover:text-blue-600 font-medium">Blog</a>
+                    <a href="/contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="/go" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold">
+                        QR Hub
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden p-2" aria-label="Menu">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Breadcrumb -->
+                <div class="flex items-center space-x-2 text-sm text-blue-300 mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <span>/</span>
+                    <span class="text-white">Support Center</span>
+                </div>
+                
+                <!-- Main Title -->
+                <div class="mb-8">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                        PureRing Support Center
+                    </h1>
+                    <p class="text-xl text-blue-200">
+                        Get help with your PureRing air scrubber. We're here to help.
+                    </p>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="max-w-3xl mb-8">
+                    <input 
+                        type="search" 
+                        placeholder="Search for Manuals, Tips, and more..." 
+                        class="support-search"
+                        aria-label="Search support articles"
+                    >
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>24/7 Online Support</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Average Response: 2 hours</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>98% Satisfaction Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Primary Entries -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 1. Warranty Registration -->
+                    <a href="/warranty" class="support-card group">
+                        <div class="mb-4">
+                            <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 text-support-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                Register Your SN
+                            </h3>
+                            <p class="text-gray-600">
+                                Activate your 3-year warranty for peace of mind protection.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="inline-flex items-center text-support-green font-semibold">
+                                <span>Register Now</span>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- 2. Video Library -->
+                    <a href="/videos" class="support-card group">
+                        <div class="mb-4">
+                            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 text-tech-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                Video Library
+                            </h3>
+                            <p class="text-gray-600">
+                                Step-by-step installation, maintenance, and troubleshooting videos.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="inline-flex items-center text-tech-600 font-semibold">
+                                <span>Watch Videos</span>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- 3. Document Downloads -->
+                    <a href="/downloads" class="support-card group">
+                        <div class="mb-4">
+                            <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                Document Downloads
+                            </h3>
+                            <p class="text-gray-600">
+                                Manuals, spec sheets, CAD files, and technical documentation.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="inline-flex items-center text-purple-600 font-semibold">
+                                <span>Download Files</span>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IKEA-style Instructions -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                        Quick Start Guide
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Like IKEA instructions, but for industrial air scrubbers. Simple, visual, effective.
+                    </p>
+                </div>
+                
+                <div class="ikea-instruction">
+                    <div class="ikea-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Unpack & Inspect</h4>
+                            <p class="text-gray-600">
+                                Remove all packaging materials. Check for any shipping damage.
+                                Verify all components are present: unit, power cord, user manual.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="ikea-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Position Unit</h4>
+                            <p class="text-gray-600">
+                                Place on level surface near power outlet.
+                                Ensure at least 2 feet clearance on all sides for optimal airflow.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="ikea-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Connect Power</h4>
+                            <p class="text-gray-600">
+                                Plug into grounded outlet (110-240V AC).
+                                Press power button. Green LED indicates ready status.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="ikea-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Test Operation</h4>
+                            <p class="text-gray-600">
+                                Select fan speed (Low/Med/High).
+                                Verify airflow from exhaust. Check for unusual noises.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="/installation" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Watch Full Installation Video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SN Code & Filter Replacement -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- SN Code Location -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                            Find Your Serial Number
+                        </h3>
+                        <div class="sn-visualization mb-6">
+                            <div class="text-center">
+                                <div class="text-5xl mb-4">🏷️</div>
+                                <p class="text-blue-200 mb-4">
+                                    Look for the white label on the back panel
+                                </p>
+                                <div class="bg-white/10 rounded-lg p-4 font-mono text-lg">
+                                    PR-2024-XXXX-XXXX
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">
+                            Your serial number (SN) is required for warranty registration and support requests.
+                            It's located on the back panel, near the power cord entry.
+                        </p>
+                    </div>
+                    
+                    <!-- Filter Replacement -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                            Never Forget a Filter Change
+                        </h3>
+                        <div class="filter-schedule mb-6">
+                            <h4 class="font-bold text-gray-900 mb-4">Recommended Replacement Schedule</h4>
+                            
+                            <div class="schedule-item">
+                                <div class="w-3 h-3 bg-support-green rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">MERV 11 Pre-filter</div>
+                                    <div class="text-sm text-gray-600">Every 3-6 months</div>
+                                </div>
+                                <div class="text-support-green font-semibold">$49.99</div>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="w-3 h-3 bg-support-yellow rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">H13 HEPA Filter</div>
+                                    <div class="text-sm text-gray-600">Every 12-18 months</div>
+                                </div>
+                                <div class="text-support-yellow font-semibold">$199.99</div>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="w-3 h-3 bg-support-red rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">Activated Carbon</div>
+                                    <div class="text-sm text-gray-600">As needed for odors</div>
+                                </div>
+                                <div class="text-support-red font-semibold">$79.99</div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="/shop" class="inline-flex items-center bg-support-green hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Shop Replacement Filters
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-gray-600">
+                        Quick answers to common questions about PureRing products.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How do I know when to replace the HEPA filter?
+                            </h4>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">
+                                Replace HEPA filters every 12-18 months under normal use, or when:
+                                • Airflow decreases noticeably
+                                • Filter indicator light turns red (1000i/1000ie models)
+                                • After heavy use in dusty environments
+                                We recommend keeping spare filters on hand for continuous operation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                Can I use PureRing outdoors?
+                            </h4>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">
+                                PureRing is designed for indoor use. For outdoor applications:
+                                • Use under covered areas only (no direct rain)
+                                • Ensure proper drainage if used in damp conditions
+                                • Consider our weather-resistant models for permanent outdoor installation
+                                • Always use GFCI-protected outlets outdoors
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                What's the difference between 1000, 1000i, and 1000ie?
+                            </h4>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">
+                                All three models share the same H13 HEPA filtration (99.97% @ 0.3µm). Differences:
+                                • <strong>1000</strong>: Manual controls, basic operation
+                                • <strong>1000i</strong>: Digital touch controls, LCD display
+                                • <strong>1000ie</strong>: WiFi/Bluetooth, mobile app, real-time air quality monitoring
+                                Choose based on your need for connectivity and monitoring features.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4 class="text-lg font-semibold text-gray-900">
+                                How do I clean the exterior of my PureRing?
+                            </h4>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">
+                                For exterior cleaning:
+                                1. Unplug unit from power
+                                2. Use soft, damp cloth with mild detergent
+                                3. Avoid abrasive cleaners or solvents
+                                4. Do not spray water directly on unit
+                                5. Dry thoroughly before use
+                                For stubborn stains, use isopropyl alcohol on a cloth (test small area first).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="/contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                        <span>Still have questions? Contact our support team</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    Need More Help?
+                </h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Our technical support team is ready to help with installation, troubleshooting, or any questions about your PureRing.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="text-3xl mb-4">📧</div>
+                        <h4 class="font-bold text-gray-900 mb-2">Email Support</h4>
+                        <p class="text-gray-600 text-sm mb-2">support@ridgesun.com</p>
+                        <p class="text-gray-500 text-xs">Response within 2 business hours</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="text-3xl mb-4">📞</div>
+                        <h4 class="font-bold text-gray-900 mb-2">Phone Support</h4>
+                        <p class="text-gray-600 text-sm mb-2">+1 (800) 555-FILTER</p>
+                        <p class="text-gray-500 text-xs">Mon-Fri 8AM-6PM EST</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="text-3xl mb-4">💬</div>
+                        <h4 class="font-bold text-gray-900 mb-2">Live Chat</h4>
+                        <p class="text-gray-600 text-sm mb-2">Available on website</p>
+                        <p class="text-gray-500 text-xs">Real-time technical support</p>
+                    </div>
+                </div>
+                
+                <a href="/contact" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Contact Support Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">R</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold">Ridgesun</div>
+                                <div class="text-blue-400 font-semibold">PureRing</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Industrial air filtration support since 2004.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/go" class="text-gray-400 hover:text-white transition-colors">QR Support Hub</a></li>
+                            <li><a href="/installation" class="text-gray-400 hover:text-white transition-colors">Installation Videos</a></li>
+                            <li><a href="/warranty" class="text-gray-400 hover:text-white transition-colors">Warranty Registration</a></li>
+                            <li><a href="/shop" class="text-gray-400 hover:text-white transition-colors">Buy Filters</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/downloads" class="text-gray-400 hover:text-white transition-colors">Technical Documents</a></li>
+                            <li><a href="/faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                            <li><a href="/troubleshooting" class="text-gray-400 hover:text-white transition-colors">Troubleshooting</a></li>
+                            <li><a href="/safety" class="text-gray-400 hover:text-white transition-colors">Safety Information</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="/warranty-terms" class="text-gray-400 hover:text-white transition-colors">Warranty Terms</a></li>
+                            <li><a href="/compliance" class="text-gray-400 hover:text-white transition-colors">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pt-8 border-t border-gray-800 text-center">
+                    <p class="text-gray-500 text-sm mb-2">
+                        © 2024 Ridgesun Industries. All rights reserved.
+                    </p>
+                    <p class="text-gray-600 text-xs">
+                        Support available 24/7 online. Phone support Mon-Fri 8AM-6PM EST.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+                
+                // Keyboard support
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.support-search');
+            if (searchInput) {
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && this.value.trim()) {
+                        e.preventDefault();
+                        const query = encodeURIComponent(this.value.trim());
+                        window.location.href = `/search?q=${query}`;
+                    }
+                });
+                
+                // Clear search on escape
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        this.value = '';
+                    }
+                });
+            }
+            
+            // Mobile menu
+            const menuButton = document.querySelector('button[aria-label="Menu"]');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    alert('Mobile menu would open here. Implement hamburger menu functionality.');
+                });
+            }
+            
+            // Support card interactions
+            const supportCards = document.querySelectorAll('.support-card');
+            supportCards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                card.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Serial number copy functionality
+            const snCode = document.querySelector('.sn-visualization .font-mono');
+            if (snCode) {
+                snCode.addEventListener('click', function() {
+                    const text = this.textContent.trim();
+                    navigator.clipboard.writeText(text).then(() => {
+                        // Show copied notification
+                        const notification = document.createElement('div');
+                        notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg text-sm z-50';
+                        notification.textContent = 'Serial number copied!';
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 2000);
+                    });
+                });
+                
+                // Add tooltip
+                snCode.title = 'Click to copy serial number format';
+            }
+            
+            // Filter schedule hover effects
+            const scheduleItems = document.querySelectorAll('.schedule-item');
+            scheduleItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+            
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                const timing = performance.timing;
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                console.log(`Support center loaded in ${loadTime}ms`);
+                
+                if (loadTime < 2000) {
+                    console.log('Excellent loading performance for support center');
+                }
+                
+                // Track support page views
+                // ga('send', 'pageview', '/support-center');
+            });
+            
+            // IKEA instructions animation
+            const ikeaSteps = document.querySelectorAll('.ikea-step');
+            ikeaSteps.forEach((step, index) => {
+                // Add animation delay
+                step.style.animationDelay = `${index * 0.1}s`;
+                step.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                step.style.opacity = '0';
+                
+                // Trigger animation when in view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationPlayState = 'running';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(step);
+            });
+            
+            // Support search suggestions (simplified)
+            if (searchInput) {
+                const commonQueries = [
+                    'How to replace HEPA filter',
+                    'Warranty registration process',
+                    'Troubleshooting guide',
+                    'Installation video',
+                    'Filter replacement schedule',
+                    'Serial number location',
+                    'Technical specifications',
+                    'Contact support'
+                ];
+                
+                searchInput.addEventListener('focus', function() {
+                    this.setAttribute('placeholder', 'Try: "filter replacement" or "warranty"');
+                });
+                
+                searchInput.addEventListener('blur', function() {
+                    this.setAttribute('placeholder', 'Search for Manuals, Tips, and more...');
+                });
+            }
+        });
+        
+        // CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

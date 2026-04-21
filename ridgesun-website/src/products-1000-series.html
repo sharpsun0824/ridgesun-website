@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureRing 1000 Series | H13 Medical-Grade Air Filtration</title>
+    <meta name="description" content="Compare PureRing 1000, 1000i, and 1000ie industrial air scrubbers. Technical specifications, stackable design, medical-grade HEPA H13 filtration.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial': {
+                            '900': '#0f172a',
+                            '800': '#1e293b',
+                            '700': '#334155',
+                            '600': '#475569',
+                        },
+                        'tech': {
+                            '600': '#2563eb',
+                            '500': '#3b82f6',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'SF Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        /* Industrial Design */
+        :root {
+            --industrial-900: #0f172a;
+            --industrial-800: #1e293b;
+            --tech-600: #2563eb;
+        }
+        
+        /* Technical Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .tech-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            color: var(--industrial-900);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .tech-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--industrial-700);
+        }
+        
+        .tech-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .tech-table .highlight {
+            background-color: #eff6ff;
+            font-weight: 600;
+            color: var(--tech-600);
+        }
+        
+        /* Product Hotspot */
+        .product-hotspot {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .hotspot-marker {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--tech-600);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .hotspot-marker:hover {
+            transform: scale(1.2);
+            background-color: #1d4ed8;
+        }
+        
+        .hotspot-tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        
+        .hotspot-marker:hover .hotspot-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Exploded View */
+        .exploded-view {
+            position: relative;
+            height: 400px;
+        }
+        
+        .exploded-layer {
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+        
+        .exploded-view:hover .exploded-layer:nth-child(1) {
+            transform: translateY(-20px);
+        }
+        
+        .exploded-view:hover .exploded-layer:nth-child(2) {
+            transform: translateY(-40px);
+        }
+        
+        .exploded-view:hover .exploded-layer:nth-child(3) {
+            transform: translateY(-60px);
+        }
+        
+        /* Stackable Design */
+        .stackable-demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .stackable-unit {
+            width: 200px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid #334155;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .stackable-unit:hover {
+            transform: translateY(-4px);
+            border-color: var(--tech-600);
+        }
+        
+        /* Responsive Table */
+        @media (max-width: 768px) {
+            .tech-table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .tech-table {
+                min-width: 800px;
+            }
+        }
+        
+        /* Performance */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="font-display bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="/" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">R</span>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-gray-900">Ridgesun</span>
+                            <span class="text-blue-600 font-semibold">PureRing</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="/products" class="text-blue-600 font-medium border-b-2 border-blue-600 pb-1">Products</a>
+                    <a href="/support" class="text-gray-700 hover:text-blue-600 font-medium">Support</a>
+                    <a href="/blog" class="text-gray-700 hover:text-blue-600 font-medium">Blog</a>
+                    <a href="/contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="/go" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold">
+                        Support Hub
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden p-2" aria-label="Menu">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Breadcrumb -->
+                <div class="flex items-center space-x-2 text-sm text-blue-300 mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <span>/</span>
+                    <a href="/products" class="hover:text-white">Products</a>
+                    <span>/</span>
+                    <span class="text-white">PureRing 1000 Series</span>
+                </div>
+                
+                <!-- Main Title -->
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                        PureRing 1000 Series
+                    </h1>
+                    <p class="text-xl text-blue-200 max-w-3xl">
+                        Industrial air scrubbers with H13 medical-grade filtration. 
+                        Engineered for performance, built for durability.
+                    </p>
+                </div>
+                
+                <!-- Core Features -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-2xl font-bold text-blue-400 mb-1">H13</div>
+                        <div class="text-sm text-blue-300">Medical-Grade HEPA</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-2xl font-bold text-blue-400 mb-1">350 CFM</div>
+                        <div class="text-sm text-blue-300">Airflow Rate</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-2xl font-bold text-blue-400 mb-1">Stackable</div>
+                        <div class="text-sm text-blue-300">Space-Saving Design</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-2xl font-bold text-blue-400 mb-1">3 Years</div>
+                        <div class="text-sm text-blue-300">Warranty</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Comparison -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                        Compare Models
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Choose the right PureRing for your needs. All models feature H13 medical-grade filtration.
+                    </p>
+                </div>
+                
+                <!-- Comparison Table -->
+                <div class="tech-table-container mb-16">
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th>PureRing 1000</th>
+                                <th>PureRing 1000i</th>
+                                <th>PureRing 1000ie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filtration -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Filtration Efficiency</td>
+                                <td class="highlight">99.97% @ 0.3µm</td>
+                                <td class="highlight">99.97% @ 0.3µm</td>
+                                <td class="highlight">99.97% @ 0.3µm</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Filter Grade</td>
+                                <td>HEPA H13 + MERV 11 Pre-filter</td>
+                                <td>HEPA H13 + MERV 11 Pre-filter</td>
+                                <td>HEPA H13 + MERV 11 Pre-filter</td>
+                            </tr>
+                            
+                            <!-- Performance -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Airflow (CFM)</td>
+                                <td>350 CFM</td>
+                                <td>350 CFM</td>
+                                <td>350 CFM</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Static Pressure</td>
+                                <td>1.2" H₂O</td>
+                                <td>1.2" H₂O</td>
+                                <td>1.2" H₂O</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Noise Level</td>
+                                <td>55 dB(A)</td>
+                                <td>55 dB(A)</td>
+                                <td>55 dB(A)</td>
+                            </tr>
+                            
+                            <!-- Power -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Power Consumption</td>
+                                <td>120W</td>
+                                <td>120W</td>
+                                <td>120W</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Voltage</td>
+                                <td>110-240V AC</td>
+                                <td>110-240V AC</td>
+                                <td>110-240V AC</td>
+                            </tr>
+                            
+                            <!-- Physical -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Dimensions (L×W×H)</td>
+                                <td>24" × 24" × 18"</td>
+                                <td>24" × 24" × 18"</td>
+                                <td>24" × 24" × 18"</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Weight</td>
+                                <td>85 lbs (38.5 kg)</td>
+                                <td>86 lbs (39 kg)</td>
+                                <td>87 lbs (39.5 kg)</td>
+                            </tr>
+                            
+                            <!-- Features -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Controls</td>
+                                <td>Manual</td>
+                                <td>Digital Touch</td>
+                                <td>Digital Touch + App</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Connectivity</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td class="highlight">WiFi + Bluetooth</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-gray-900">Monitoring</td>
+                                <td>LED Indicators</td>
+                                <td>LCD Display</td>
+                                <td class="highlight">Real-time Air Quality</td>
+                            </tr>
+                            
+                            <!-- Warranty -->
+                            <tr>
+                                <td class="font-semibold text-gray-900">Warranty</td>
+                                <td>3 Years</td>
+                                <td>3 Years</td>
+                                <td>3 Years</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact?model=1000" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-center transition-colors">
+                        Request Quote - 1000
+                    </a>
+                    <a href="/contact?model=1000i" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-center transition-colors">
+                        Request Quote - 1000i
+                    </a>
+                    <a href="/contact?model=1000ie" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-center transition-colors">
+                        Request Quote - 1000ie
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Hotspot -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Product Image with Hotspots -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                            Explore the Engineering
+                        </h3>
+                        <div class="product-hotspot relative bg-white rounded-xl p-6 shadow-lg">
+                            <img 
+                                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" 
+                                alt="PureRing 1000 Product Cutaway"
+                                class="rounded-lg"
+                            >
+                            
+                            <!-- Hotspot 1: Air Intake -->
+                            <div class="hotspot-marker" style="top: 30%; left: 15%;">
+                                <div class="hotspot-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <h4 class="font-bold text-gray-900 mb-1">360° Air Intake</h4>
+                                    <p class="text-sm text-gray-600">Multi-directional intake for maximum airflow</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Hotspot 2: HEPA Filter -->
+                            <div class="hotspot-marker" style="top: 50%; left: 50%;">
+                                <div class="hotspot-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <h4 class="font-bold text-gray-900 mb-1">H13 HEPA Filter</h4>
+                                    <p class="text-sm text-gray-600">Medical-grade filtration at 99.97% efficiency</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Hotspot 3: Control Panel -->
+                            <div class="hotspot-marker" style="top: 20%; left: 80%;">
+                                <div class="hotspot-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <h4 class="font-bold text-gray-900 mb-1">Control Panel</h4>
+                                    <p class="text-sm text-gray-600">Intuitive controls with LED status indicators</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Hotspot 4: Exhaust -->
+                            <div class="hotspot-marker" style="top: 70%; left: 85%;">
+                                <div class="hotspot-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <h4 class="font-bold text-gray-900 mb-1">Directional Exhaust</h4>
+                                    <p class="text-sm text-gray-600">Adjustable louvers for targeted airflow</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Details -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                            Technical Excellence
+                        </h3>
+                        
+                        <!-- H13 Medical Grade -->
+                        <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-blue-600 font-bold">H13</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 mb-1">
+                                        H13 Medical-Grade Filtration
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Exceeds hospital cleanroom standards. Captures particles as small as 0.3 microns.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600">99.97%</div>
+                                    <div class="text-sm text-gray-600">Filtration Efficiency</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600">0.3µm</div>
+                                    <div class="text-sm text-gray-600">Particle Size</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stackable Design -->
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 mb-1">
+                                        Stackable Design
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Save floor space by stacking multiple units. Interlocking design ensures stability.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stackable-demo mt-6">
+                                <div class="stackable-unit">PureRing 1000</div>
+                                <div class="stackable-unit">PureRing 1000</div>
+                                <div class="stackable-unit">PureRing 1000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exploded View -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                        Internal Construction
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        See what makes PureRing different. Every component is engineered for maximum performance.
+                    </p>
+                </div>
+                
+                <div class="exploded-view bg-gray-100 rounded-2xl p-8 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Layers -->
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">MERV 11 Pre-filter</h4>
+                                    <p class="text-gray-600 text-sm">Captures large particles, extends HEPA life</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Activated Carbon Layer</h4>
+                                    <p class="text-gray-600 text-sm">Removes odors and VOCs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">H13 HEPA Filter</h4>
+                                    <p class="text-gray-600 text-sm">Medical-grade particle filtration</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">High-Performance Motor</h4>
+                                    <p class="text-gray-600 text-sm">Brushless DC for efficiency and longevity</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Visual -->
+                        <div class="relative h-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-4">🔬</div>
+                                <p class="text-gray-700 font-medium">Exploded View Diagram</p>
+                                <p class="text-gray-500 text-sm mt-2">Hover to see layers separate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download Specs -->
+                <div class="text-center">
+                    <a href="/downloads/purering-1000-specs.pdf" class="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Download Technical Specifications (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                        Industrial Applications
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        PureRing 1000 Series is engineered for demanding environments.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🏗️</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Construction</h4>
+                        <p class="text-gray-600 mb-4">
+                            Dust control during drywall, concrete cutting, and demolition.
+                        </p>
+                        <div class="text-sm text-blue-600 font-medium">Recommended: PureRing 1000</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🏭</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Manufacturing</h4>
+                        <p class="text-gray-600 mb-4">
+                            Fume extraction, particulate control in welding and machining.
+                        </p>
+                        <div class="text-sm text-blue-600 font-medium">Recommended: PureRing 1000i</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🏥</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Healthcare</h4>
+                        <p class="text-gray-600 mb-4">
+                            Cleanroom maintenance, mold remediation, infection control.
+                        </p>
+                        <div class="text-sm text-blue-600 font-medium">Recommended: PureRing 1000ie</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">R</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold">Ridgesun</div>
+                                <div class="text-blue-400 font-semibold">PureRing</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Industrial air filtration systems engineered with precision.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Technical Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/go" class="text-gray-400 hover:text-white transition-colors">QR Support Hub</a></li>
+                            <li><a href="/installation" class="text-gray-400 hover:text-white transition-colors">Installation Guides</a></li>
+                            <li><a href="/warranty" class="text-gray-400 hover:text-white transition-colors">Warranty Registration</a></li>
+                            <li><a href="/support" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/downloads" class="text-gray-400 hover:text-white transition-colors">Technical Documents</a></li>
+                            <li><a href="/blog" class="text-gray-400 hover:text-white transition-colors">Industry Blog</a></li>
+                            <li><a href="/certifications" class="text-gray-400 hover:text-white transition-colors">Certifications</a></li>
+                            <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Request Quote</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pt-8 border-t border-gray-800 text-center">
+                    <p class="text-gray-500 text-sm mb-2">
+                        © 2024 Ridgesun Industries. All rights reserved.
+                    </p>
+                    <p class="text-gray-600 text-xs">
+                        Specifications subject to change without notice. H13 HEPA filtration certified.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hotspot interaction
+            const hotspots = document.querySelectorAll('.hotspot-marker');
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                    this.style.backgroundColor = '#1d4ed8';
+                });
+                
+                hotspot.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.backgroundColor = '';
+                });
+                
+                // Touch support for mobile
+                hotspot.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(1.2)';
+                    this.style.backgroundColor = '#1d4ed8';
+                    
+                    // Show tooltip on touch
+                    const tooltip = this.querySelector('.hotspot-tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '1';
+                        tooltip.style.visibility = 'visible';
+                        
+                        // Hide after 3 seconds
+                        setTimeout(() => {
+                            tooltip.style.opacity = '';
+                            tooltip.style.visibility = '';
+                        }, 3000);
+                    }
+                });
+                
+                hotspot.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                    this.style.backgroundColor = '';
+                });
+            });
+            
+            // Exploded view animation
+            const explodedView = document.querySelector('.exploded-view');
+            if (explodedView) {
+                explodedView.addEventListener('mouseenter', function() {
+                    const layers = this.querySelectorAll('.exploded-layer');
+                    layers.forEach((layer, index) => {
+                        layer.style.transform = `translateY(-${(index + 1) * 20}px)`;
+                    });
+                });
+                
+                explodedView.addEventListener('mouseleave', function() {
+                    const layers = this.querySelectorAll('.exploded-layer');
+                    layers.forEach(layer => {
+                        layer.style.transform = '';
+                    });
+                });
+            }
+            
+            // Model selection for quote requests
+            const quoteButtons = document.querySelectorAll('a[href^="/contact?model="]');
+            quoteButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const model = this.getAttribute('href').split('model=')[1];
+                    console.log(`Quote requested for PureRing ${model}`);
+                    
+                    // In production, track this event in analytics
+                    // ga('send', 'event', 'Products', 'Quote Request', `PureRing ${model}`);
+                });
+            });
+            
+            // Mobile menu
+            const menuButton = document.querySelector('button[aria-label="Menu"]');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    alert('Mobile menu would open here. Implement hamburger menu functionality.');
+                });
+            }
+            
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                const timing = performance.timing;
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                console.log(`Products page loaded in ${loadTime}ms`);
+                
+                if (loadTime < 2500) {
+                    console.log('Excellent loading performance for technical specifications page');
+                }
+            });
+            
+            // Table scrolling on mobile
+            const tableContainer = document.querySelector('.tech-table-container');
+            if (tableContainer && window.innerWidth < 768) {
+                tableContainer.addEventListener('touchstart', function(e) {
+                    this.style.cursor = 'grabbing';
+                    this.style.userSelect = 'none';
+                });
+                
+                tableContainer.addEventListener('touchend', function() {
+                    this.style.cursor = '';
+                    this.style.userSelect = '';
+                });
+            }
+            
+            // Model comparison highlight
+            const tableRows = document.querySelectorAll('.tech-table tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f8fafc';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+        });
+        
+        // Print styles for spec sheet
+        window.addEventListener('beforeprint', function() {
+            document.body.classList.add('printing');
+        });
+        
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing');
+        });
+    </script>
+</body>
+</html>

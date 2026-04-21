@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridgesun PureRing | 20 Years of Engineering Excellence</title>
+    <meta name="description" content="Industrial air filtration systems engineered with 20 years of expertise. Driven by fluid dynamics for cleaner air, safer workspace.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial': {
+                            '900': '#0f172a',
+                            '800': '#1e293b',
+                            '700': '#334155',
+                        },
+                        'tech': {
+                            '600': '#2563eb',
+                            '500': '#3b82f6',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'SF Mono', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        /* Industrial Design System */
+        :root {
+            --industrial-900: #0f172a;
+            --industrial-800: #1e293b;
+            --tech-600: #2563eb;
+        }
+        
+        /* Fullscreen Hero */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Parallax Scrolling Effect */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            transform: translateZ(-1px) scale(1.2);
+            z-index: -1;
+        }
+        
+        /* Industrial Card */
+        .industrial-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .industrial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            border-color: #2563eb;
+        }
+        
+        /* Scroll Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Tech Badge */
+        .tech-badge {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            display: inline-block;
+        }
+        
+        /* Fluid Dynamics Visualization */
+        .fluid-dynamics {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fluid-dynamics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(37, 99, 235, 0.1) 50%, transparent 70%);
+            animation: flow 3s ease-in-out infinite;
+        }
+        
+        @keyframes flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+        
+        /* Performance Optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Accessibility */
+        :focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="font-display bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">R</span>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-gray-900">Ridgesun</span>
+                        <span class="text-blue-600 font-semibold">PureRing</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/products" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Products</a>
+                    <a href="/support" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Support</a>
+                    <a href="/blog" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Blog</a>
+                    <a href="/contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                    <a href="/go" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Support Hub
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" aria-label="Menu">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center pt-16">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <!-- 20 Years Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 animate-fade-in">
+                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span class="text-white font-semibold text-sm">Since 2004</span>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="hero-title text-5xl md:text-7xl font-black text-white mb-6 animate-fade-in-up">
+                20 Years of Engineering Excellence
+                <span class="block text-blue-400 mt-2">in Every Breath.</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="hero-subtitle text-xl md:text-2xl text-blue-200 mb-10 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s">
+                Industrial air filtration systems engineered with precision, 
+                driven by fluid dynamics for cleaner air and safer workspaces.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.4s">
+                <a href="/products" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors transform hover:scale-105">
+                    Explore Products
+                </a>
+                <a href="/contact" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors backdrop-blur-sm border border-white/20">
+                    Contact Experts
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Engineering Excellence Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Driven by Fluid Dynamics
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        PureRing isn't just assembled—it's engineered. Every curve, every angle, 
+                        every component is optimized through computational fluid dynamics (CFD) analysis.
+                    </p>
+                </div>
+                
+                <!-- Engineering Process -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- CFD Analysis -->
+                    <div class="industrial-card fade-in-section">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">CFD Analysis</h3>
+                        <p class="text-gray-600 mb-4">
+                            Using Rhino 3D and advanced simulation software to optimize airflow patterns, 
+                            reduce turbulence, and maximize filtration efficiency.
+                        </p>
+                        <span class="tech-badge">Precision Engineering</span>
+                    </div>
+                    
+                    <!-- Material Science -->
+                    <div class="industrial-card fade-in-section" style="animation-delay: 0.2s">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Material Science</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aircraft-grade aluminum housing, industrial-grade seals, 
+                            and corrosion-resistant components for maximum durability.
+                        </p>
+                        <span class="tech-badge">Military Grade</span>
+                    </div>
+                    
+                    <!-- Quality Control -->
+                    <div class="industrial-card fade-in-section" style="animation-delay: 0.4s">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality Control</h3>
+                        <p class="text-gray-600 mb-4">
+                            Every unit undergoes 72-point inspection and performance testing 
+                            before leaving our factory. ISO 9001:2015 certified.
+                        </p>
+                        <span class="tech-badge">Zero Defects</span>
+                    </div>
+                </div>
+                
+                <!-- Factory Image -->
+                <div class="relative rounded-2xl overflow-hidden mb-16 fade-in-section">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img 
+                            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80" 
+                            alt="Ridgesun Factory Assembly Line"
+                            class="object-cover w-full h-full filter grayscale contrast-125"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                        <div class="p-8 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Manufacturing Excellence</h3>
+                            <p class="text-blue-200">Our Ningbo factory: Where precision meets production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in-section">
+                    Cleaner Air, Safer Workspace.
+                </h2>
+                <p class="text-xl text-blue-200 mb-10 fade-in-section" style="animation-delay: 0.2s">
+                    Our vision extends beyond filtration. We're creating environments where workers breathe easier, 
+                    equipment lasts longer, and productivity thrives.
+                </p>
+                
+                <!-- Vision Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    <div class="fade-in-section" style="animation-delay: 0.3s">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">99.97%</div>
+                        <div class="text-blue-300">Filtration Efficiency</div>
+                    </div>
+                    <div class="fade-in-section" style="animation-delay: 0.4s">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">20+</div>
+                        <div class="text-blue-300">Years Experience</div>
+                    </div>
+                    <div class="fade-in-section" style="animation-delay: 0.5s">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">10K+</div>
+                        <div class="text-blue-300">Units Deployed</div>
+                    </div>
+                    <div class="fade-in-section" style="animation-delay: 0.6s">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">72</div>
+                        <div class="text-blue-300">Quality Checkpoints</div>
+                    </div>
+                </div>
+                
+                <!-- 3D Render of PureRing -->
+                <div class="relative rounded-2xl overflow-hidden mb-12 fade-in-section" style="animation-delay: 0.7s">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img 
+                            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80" 
+                            alt="PureRing 1000 3D Render - 45 degree angle showing metal construction"
+                            class="object-cover w-full h-full"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <div class="tech-badge bg-white/20 backdrop-blur-sm">PureRing 1000 Series</div>
+                    </div>
+                </div>
+                
+                <!-- CTA -->
+                <div class="fade-in-section" style="animation-delay: 0.8s">
+                    <a href="/products" class="inline-flex items-center bg-white text-blue-900 hover:bg-blue-50 px-8 py-4 rounded-lg font-bold text-lg transition-colors transform hover:scale-105">
+                        <span>Explore Technical Specifications</span>
+                        <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    From automotive manufacturing to pharmaceutical cleanrooms, PureRing delivers reliable performance.
+                </p>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-blue-600 font-bold text-xl">ISO</span>
+                    </div>
+                    <div class="text-sm font-medium text-gray-700">ISO 9001:2015</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-blue-600 font-bold text-xl">UL</span>
+                    </div>
+                    <div class="text-sm font-medium text-gray-700">UL Listed</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-blue-600 font-bold text-xl">CE</span>
+                    </div>
+                    <div class="text-sm font-medium text-gray-700">CE Certified</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span class="text-blue-600 font-bold text-xl">H13</span>
+                    </div>
+                    <div class="text-sm font-medium text-gray-700">HEPA H13 Grade</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">R</span>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold">Ridgesun</div>
+                            <div class="text-blue-400 font-semibold">PureRing</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Industrial air filtration systems engineered with precision since 2004.
+                    </p>
+                </div>
+                
+                <!-- Products -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/products/1000" class="text-gray-400 hover:text-white transition-colors">PureRing 1000</a></li>
+                        <li><a href="/products/1000i" class="text-gray-400 hover:text-white transition-colors">PureRing 1000i</a></li>
+                        <li><a href="/products/1000ie" class="text-gray-400 hover:text-white transition-colors">PureRing 1000ie</a></li>
+                        <li><a href="/shop" class="text-gray-400 hover:text-white transition-colors">Replacement Filters</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/go" class="text-gray-400 hover:text-white transition-colors">QR Support Hub</a></li>
+                        <li><a href="/installation" class="text-gray-400 hover:text-white transition-colors">Installation Guides</a></li>
+                        <li><a href="/warranty" class="text-gray-400 hover:text-white transition-colors">Warranty Registration</a></li>
+                        <li><a href="/support" class="text-gray-400 hover:text-white transition-colors">Technical Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog & Resources</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="/careers" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm mb-2">
+                    © 2024 Ridgesun Industries. All rights reserved. Made in USA.
+                </p>
+                <p class="text-gray-600 text-xs">
+                    ISO 9001:2015 Certified | UL Listed | CE Certified
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in sections on scroll
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            
+            const fadeInOnScroll = function() {
+                fadeSections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.85) {
+                        section.classList.add('is-visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Parallax effect for hero
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.parallax-bg');
+                
+                if (parallax) {
+                    parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+            
+            // Mobile menu toggle
+            const menuButton = document.querySelector('button[aria-label="Menu"]');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    // In production, implement mobile menu
+                    alert('Mobile menu would open here. Implement hamburger menu functionality.');
+                });
+            }
+            
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                const timing = performance.timing;
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                console.log(`Homepage loaded in ${loadTime}ms`);
+                
+                // Report to analytics
+                if (loadTime < 3000) {
+                    console.log('Excellent loading performance for brand homepage');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Intersection Observer for lazy loading
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>

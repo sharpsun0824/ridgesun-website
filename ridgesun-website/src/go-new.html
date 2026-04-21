@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureRing Support Hub | Scan & Go</title>
+    <meta name="description" content="Welcome to PureRing Family. Activate warranty, watch installation videos, buy filters, get support.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial': {
+                            '50': '#f8fafc',
+                            '100': '#f1f5f9',
+                            '900': '#0f172a',
+                        },
+                        'tech': {
+                            '600': '#2563eb',
+                            '700': '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏭</text></svg>">
+    
+    <style>
+        /* Industrial Background - Subtle texture */
+        body {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 20%);
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        /* Card hover effect */
+        .action-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .action-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border-color: #2563eb;
+        }
+        
+        /* Icon styling */
+        .action-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+        
+        /* Touch optimization */
+        @media (max-width: 640px) {
+            .touch-target {
+                min-height: 140px;
+                min-width: 140px;
+            }
+            
+            .action-card {
+                padding: 1.25rem;
+            }
+            
+            .action-icon {
+                width: 56px;
+                height: 56px;
+            }
+        }
+        
+        /* QR Scanner animation */
+        .qr-scanner {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .qr-scanner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+            animation: scan 2s ease-in-out infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Serial number input */
+        .serial-input {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Minimal Header - Only Logo -->
+    <header class="py-4 px-4">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">R</span>
+                    </div>
+                    <span class="text-lg font-semibold text-gray-900">Ridgesun</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - First Screen Only -->
+    <main class="flex-1 container mx-auto px-4 py-8">
+        <!-- Welcome Message -->
+        <div class="text-center mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                Welcome to the PureRing Family!
+            </h1>
+            <p class="text-gray-600 text-base md:text-lg">
+                Scan your QR code for instant support
+            </p>
+        </div>
+
+        <!-- QR Scanner Simulation -->
+        <div class="qr-scanner p-6 mb-8 max-w-md mx-auto">
+            <div class="relative z-10 text-center">
+                <div class="text-5xl mb-4">📱</div>
+                <h2 class="text-xl font-semibold text-white mb-2">Scan QR Code</h2>
+                <p class="text-blue-200 text-sm">
+                    Point your camera at the QR code on your PureRing unit
+                </p>
+            </div>
+        </div>
+
+        <!-- Manual Serial Number Entry -->
+        <div class="mb-8 max-w-md mx-auto">
+            <div class="text-center mb-4">
+                <p class="text-gray-700 text-sm">Or enter serial number manually</p>
+            </div>
+            <div class="flex space-x-2">
+                <input 
+                    type="text" 
+                    placeholder="PR-XXXX-XXXX-XXXX" 
+                    class="flex-1 serial-input px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    aria-label="Serial number"
+                >
+                <button class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                    Go
+                </button>
+            </div>
+        </div>
+
+        <!-- Action Cards Grid (2x2) -->
+        <div class="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <!-- Card 1: Activate Warranty -->
+            <a href="/warranty" class="action-card touch-target" aria-label="Activate Warranty">
+                <div class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    Activate Warranty
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    3-year protection for your investment
+                </p>
+            </a>
+
+            <!-- Card 2: Watch Installation -->
+            <a href="/installation" class="action-card touch-target" aria-label="Watch Installation Videos">
+                <div class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    Installation Guide
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    Step-by-step video tutorials
+                </p>
+            </a>
+
+            <!-- Card 3: Buy Filters -->
+            <a href="/shop" class="action-card touch-target" aria-label="Buy Replacement Filters">
+                <div class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    Buy Filters
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    Genuine HEPA H13 replacements
+                </p>
+            </a>
+
+            <!-- Card 4: Get Support -->
+            <a href="/support" class="action-card touch-target" aria-label="Get Technical Support">
+                <div class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    Technical Support
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    Expert help when you need it
+                </p>
+            </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-8 text-center">
+            <div class="inline-flex items-center space-x-6 text-sm text-gray-500">
+                <div class="flex items-center space-x-1">
+                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>99.97% Filtration</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>3-Year Warranty</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="py-4 px-4 border-t border-gray-200">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-500 text-sm">
+                © 2024 Ridgesun Industries. Made in USA.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for QR Simulation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Serial number detection from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const serial = urlParams.get('sn');
+            
+            if (serial) {
+                const input = document.querySelector('input[type="text"]');
+                if (input) {
+                    input.value = serial;
+                    // Auto-submit after 1 second
+                    setTimeout(() => {
+                        window.location.href = `/warranty?sn=${serial}`;
+                    }, 1000);
+                }
+            }
+            
+            // Touch optimization
+            const cards = document.querySelectorAll('.action-card');
+            cards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                card.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Serial number input formatting
+            const serialInput = document.querySelector('.serial-input');
+            if (serialInput) {
+                serialInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/[^a-zA-Z0-9-]/g, '').toUpperCase();
+                    
+                    // Auto-format as PR-XXXX-XXXX-XXXX
+                    if (value.length > 2 && !value.includes('-')) {
+                        value = value.replace(/(PR)(\w{4})(\w{4})(\w{4})/, '$1-$2-$3-$4');
+                    }
+                    
+                    e.target.value = value;
+                });
+                
+                // Enter key to submit
+                serialInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && this.value.trim()) {
+                        window.location.href = `/warranty?sn=${this.value}`;
+                    }
+                });
+            }
+            
+            // Performance monitoring
+            window.addEventListener('load', function() {
+                const timing = performance.timing;
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                console.log(`QR Hub loaded in ${loadTime}ms`);
+                
+                // Report to analytics if load time is good
+                if (loadTime < 2000) {
+                    console.log('Excellent loading performance for mobile landing page');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
