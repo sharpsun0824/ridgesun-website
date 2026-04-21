@@ -1,0 +1,25 @@
+name = "ridgesun-website"
+type = "pages"
+compatibility_date = "2024-04-21"
+
+[pages]
+# 构建命令（如果没有构建步骤，留空）
+# command = "npm run build"
+
+# 输出目录
+output_directory = "src"
+
+# 部署分支
+production_branch = "main"
+
+# 环境变量（示例）
+[vars]
+SITE_NAME = "Ridgesun PureRing"
+ENVIRONMENT = "production"
+
+# 构建环境变量
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
