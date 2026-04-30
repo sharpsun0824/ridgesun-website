@@ -8,6 +8,10 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "routes": [
+    { "pattern": "ridgesun.com/*", "zone_name": "ridgesun.com" },
+    { "pattern": "www.ridgesun.com/*", "zone_name": "ridgesun.com" }
+  ],
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
