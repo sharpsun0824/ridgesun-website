@@ -1,8 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "ridgesun-site",
-  "pages_build_output_dir": ".open-next",
+  "name": "ridgesun",
   "compatibility_date": "2026-04-20",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
@@ -12,14 +11,14 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "ridgesun-site"
+      "service": "ridgesun"
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "ridgesun-db",
-      "database_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "database_id": "faf60652-25cc-46dd-a3a8-32c6c9100128"
     }
   ]
 }
