@@ -1,0 +1,3 @@
+pages_build_output_dir = ".open-next"
+compatibility_date = "2026-04-20"
+compatibility_flags = ["nodejs_compat"]
