@@ -7,32 +7,18 @@ import type { Product } from "@/lib/types";
 
 const featuredProducts: Product[] = [
   {
-    sku: "RS-1001",
-    name: "Smart Temperature Mug",
-    description: "Precise temperature control, long-lasting insulation. Every sip at the perfect temperature.",
+    sku: "RS-AIR-001",
+    name: "Shop Air Filtration System",
+    description: "4-side air intake, bottom exhaust. Hanging or portable dual-use. Captures dust, smoke, and fine particles.",
     image: "",
-    category: "Living",
+    category: "Shop Equipment",
   },
   {
-    sku: "RS-1002",
-    name: "Portable Outdoor Speaker",
-    description: "IPX7 waterproof, 30-hour battery life. Your adventure companion.",
+    sku: "RS-TFL-001",
+    name: "Automatic Toilet Flush Kit",
+    description: "Convert any standard toilet to hands-free automatic flushing. Easy installation, no plumbing required.",
     image: "",
-    category: "Outdoor",
-  },
-  {
-    sku: "RS-1003",
-    name: "Wireless Charging Station",
-    description: "Multi-device MagSafe fast charger. Clean, efficient, powerful.",
-    image: "",
-    category: "Tech",
-  },
-  {
-    sku: "RS-1004",
-    name: "LED Eye-Care Desk Lamp",
-    description: "Flicker-free lighting, smart dimming. Easy on your eyes.",
-    image: "",
-    category: "Living",
+    category: "Bathroom",
   },
 ];
 
@@ -50,7 +36,7 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-amber-600 font-medium text-sm tracking-wide uppercase"
             >
-              RidgeSun 2026 Collection
+              Shop &amp; Home Essentials
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -106,7 +92,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold text-gray-900">Featured Products</h2>
             <p className="text-gray-500 mt-2">Discover our most-loved items</p>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-6">
             {featuredProducts.map((product, i) => (
               <ProductCard key={product.sku} product={product} index={i} />
             ))}

@@ -2,6 +2,7 @@ export interface Product {
   sku: string;
   name: string;
   description: string;
+  longDescription?: string;
   image: string;
   category: string;
 }

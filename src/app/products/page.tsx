@@ -5,12 +5,20 @@ import ProductCard from "@/components/ProductCard";
 import type { Product } from "@/lib/types";
 
 const products: Product[] = [
-  { sku: "RS-1001", name: "Smart Temperature Mug", description: "Precise temperature control, long-lasting insulation. 316 stainless steel inner wall, OLED touch display.", image: "", category: "Living" },
-  { sku: "RS-1002", name: "Portable Outdoor Speaker", description: "IPX7 waterproof, 30-hour battery. Bluetooth 5.3, TWS pairing, deep bass for outdoor adventures.", image: "", category: "Outdoor" },
-  { sku: "RS-1003", name: "Wireless Charging Station", description: "Multi-device MagSafe fast charger. Charge phone, earbuds, and watch simultaneously.", image: "", category: "Tech" },
-  { sku: "RS-1004", name: "LED Eye-Care Desk Lamp", description: "Flicker-free, smart dimming. Ra>95 CRI, color temp 2700K-6500K, 45-min timer.", image: "", category: "Living" },
-  { sku: "RS-1005", name: "Foldable Storage Bin", description: "Large capacity collapsible bin, 30lb capacity. 60L volume, no-tool assembly.", image: "", category: "Home" },
-  { sku: "RS-1006", name: "Car Phone Mount", description: "Magnetic quick-release, shockproof. Nano-suction base, 360° rotation, one-hand operation.", image: "", category: "Auto" },
+  {
+    sku: "RS-AIR-001",
+    name: "Shop Air Filtration System",
+    description: "4-side air intake, bottom exhaust. Hanging or portable dual-use. Captures dust, smoke, and fine particles in workshops and garages.",
+    image: "",
+    category: "Shop Equipment",
+  },
+  {
+    sku: "RS-TFL-001",
+    name: "Automatic Toilet Flush Kit",
+    description: "Convert any standard toilet to hands-free automatic flushing. Easy installation, no plumbing modification required. Battery or AC powered.",
+    image: "",
+    category: "Bathroom",
+  },
 ];
 
 export default function ProductsPage() {
@@ -26,7 +34,7 @@ export default function ProductsPage() {
           <p className="text-gray-500 mt-2">Explore the full RidgeSun collection</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-6">
           {products.map((product, i) => (
             <ProductCard key={product.sku} product={product} index={i} />
           ))}
